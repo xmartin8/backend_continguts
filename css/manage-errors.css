@@ -1,0 +1,239 @@
+/* css/manage-errors.css - Estils específics per a la pàgina de Gestió d'Errors */
+
+/* Estils per al contingut d'errors */
+.errors-content {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    padding: 2rem;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+.errors-image-container {
+    text-align: center;
+    margin: 1rem 0 2rem 0;
+}
+
+.errors-image {
+    max-width: 60%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 1px solid #dee2e6;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.errors-info {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #0d6efd;
+}
+
+.errors-topics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.errors-topic {
+    padding: 1rem;
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.errors-topic:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-color: #0d6efd;
+}
+
+.errors-topic h4 {
+    color: #495057;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.errors-topic p {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* Estils per a la taula de tipus d'errors */
+.errors-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.errors-table th {
+    background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.errors-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #dfe6e9;
+}
+
+.errors-table tr:last-child td {
+    border-bottom: none;
+}
+
+.errors-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.errors-table tr:hover {
+    background-color: #e9ecef;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .errors-image {
+        max-width: 75%;
+    }
+    
+    .errors-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .errors-content {
+        padding: 1.5rem;
+    }
+    
+    .errors-image {
+        max-width: 90%;
+        max-height: 300px;
+    }
+    
+    .errors-topics {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .errors-image {
+        max-width: 95%;
+        max-height: 250px;
+    }
+    
+    .errors-table {
+        font-size: 0.9rem;
+    }
+    
+    .errors-table th,
+    .errors-table td {
+        padding: 8px 10px;
+    }
+}
+
+/* Estils per als mòduls */
+.module-card {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #198754;
+    margin-bottom: 1rem;
+}
+
+.module-title {
+    color: #198754;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.module-card p {
+    margin-bottom: 0.5rem;
+    color: #495057;
+}
+
+/* Estils per a notes importants */
+.important-note {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+.important-note h5 {
+    color: #856404;
+    margin-bottom: 0.5rem;
+}
+
+/* Estils per a exemples */
+.example-block {
+    background-color: #e7f5ff;
+    border: 1px solid #b3d7ff;
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.example-title {
+    color: #004085;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Botó de copiar codi */
+.copy-btn {
+    background-color: transparent;
+    border: 1px solid #75715e;
+    color: #f8f8f2;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.copy-btn:hover {
+    background-color: #49483e;
+}
+
+.copy-btn.copied {
+    background-color: #50fa7b;
+    color: #282a36;
+    border-color: #50fa7b;
+}
+
+/* Barra de títol del codi */
+.code-header {
+    background-color: #272822;
+    color: #f8f8f2;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.code-language {
+    background-color: #49483e;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}

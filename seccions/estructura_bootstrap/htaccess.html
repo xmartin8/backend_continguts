@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Mostrar .htaccess amb Highlight.js</title>
+
+    <!-- Highlight.js CSS fosc -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai-sublime.min.css">
+
+    <style>
+        body {
+            font-family: monospace;
+            background-color: #2d2d2d; /* fons fosc */
+            color: #ccc;
+            padding: 20px;
+        }
+        pre {
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid #555;
+        }
+    </style>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body><main class='container py-4'>
+
+<pre><code class="apache" id="htaccess-code">Carregant...</code></pre>
+
+<!-- Highlight.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/apache.min.js"></script>
+<script>
+    const htaccessCode = `RewriteEngine On
+# Rutes específiques
+RewriteRule ^inici$ /index.php [L]
+RewriteRule ^login$ /Vista/login/login.php [L]
+#....
+# Maneig d'errors
+RewriteRule ^error404$ /Vista/error/error404.html [L]
+ErrorDocument 404 /error404
+
+RewriteRule ^error401$ /Vista/error/error401.html [L]
+ErrorDocument 401 /error401`;
+
+    const codeBlock = document.getElementById('htaccess-code');
+    codeBlock.textContent = htaccessCode;   // assigna literalment el codi
+    hljs.highlightElement(codeBlock);       // aplica resaltat de sintaxi
+</script>
+
+</main></body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemples - Backend is the Dark Side</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .examples-container {
+            padding: 2rem;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+        }
+        
+        .examples-content {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #0d6efd;
+            text-decoration: none;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        .folder-list {
+            margin-top: 2rem;
+        }
+        
+        .folder-item {
+            padding: 1rem;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            transition: all 0.2s;
+        }
+        
+        .folder-item:hover {
+            background-color: #f8f9fa;
+            border-color: #0d6efd;
+        }
+        
+        .folder-icon {
+            color: #ffc107;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+        
+        .file-icon {
+            color: #6c757d;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+        
+        .download-btn {
+            float: right;
+        }
+        
+        .file-size {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-left: 1rem;
+        }
+        
+        .breadcrumb {
+            background-color: #e9ecef;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="examples-container">
+        <div class="examples-content">
+            <a href="javascript:history.back()" class="back-link">← Tornar enrere</a>
+            
+            <h2 class="mb-4">📁 Exemples disponibles</h2>
+            
+            <div class="breadcrumb">
+                <span>Exemples</span>
+            </div>
+            
+            <div class="folder-list">
+                <!-- Carpeta NF2 -->
+                <div class="folder-item">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-folder folder-icon"></i>
+                        <div>
+                            <h5 class="mb-1">NF2 - Traits i Autoload</h5>
+                            <p class="mb-0 text-muted">Exemples de Traits, Autoload i codi PHP orientat a objectes</p>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <a href="NF2/00_Continguts/" class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-folder2-open"></i> Obrir carpeta
+                        </a>
+                        <a href="NF2/" download class="btn btn-success btn-sm ms-2">
+                            <i class="bi bi-download"></i> Descarregar carpeta
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Carpeta UF3 -->
+                <div class="folder-item">
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-folder folder-icon"></i>
+                        <div>
+                            <h5 class="mb-1">UF3 - MVC i Namespace</h5>
+                            <p class="mb-0 text-muted">Exemples d'estructura MVC, Namespaces i Autoloading</p>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <a href="UF3/00_Continguts/" class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-folder2-open"></i> Obrir carpeta
+                        </a>
+                        <a href="UF3/" download class="btn btn-success btn-sm ms-2">
+                            <i class="bi bi-download"></i> Descarregar carpeta
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert alert-info mt-4">
+                <h5><i class="bi bi-info-circle"></i> Instruccions</h5>
+                <p class="mb-0">Fes clic a "Obrir carpeta" per veure el contingut o "Descarregar carpeta" per baixar tot el contingut en format ZIP.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</body>
+</html>

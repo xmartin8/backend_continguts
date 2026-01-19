@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Mostrar codi PHP amb Highlight.js</title>
+
+    <!-- Highlight.js CSS fosc -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai-sublime.min.css">
+    
+
+    <style>
+        body {
+            font-family: monospace;
+            background-color: #2d2d2d; /* fons fosc */
+            color: #ccc;
+            padding: 20px;
+        }
+        pre {
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<pre><code class="php" id="php-code">Carregant...</code></pre>
+
+<!-- Highlight.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/php.min.js"></script>
+<script>
+    const phpCode = `<?php
+require_once __DIR__ . '/../env.php';
+
+/**
+ * Crea una nova connexió amb la base de dades
+ *
+ * @return PDO objecte PDO amb la connexió
+ */
+function getConnection()
+{
+   
+    try {
+        return new PDO(sprintf('mysql:host=%s;dbname=%s', DB_HOST, DB_NAME), DB_USER, DB_PASSWORD);
+    } catch (PDOException $e) {
+        //header('Location: ../view/error/database.html');
+        die("Error getConnection: " . $e->getMessage());
+        //die(DB_ERROR_MSG);
+    }
+}
+?>`;
+
+    const codeBlock = document.getElementById('php-code');
+    codeBlock.textContent = phpCode;
+
+    // Inicialitza Highlight.js
+    hljs.highlightElement(codeBlock);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+/* css/seguretat.css - Estils específics per a la pàgina de seguretat */
+
+/* Estils per al contingut de seguretat */
+.security-content {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    padding: 2rem;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+.security-image-container {
+    text-align: center;
+    margin: 1rem 0 2rem 0;
+}
+
+.security-image {
+    max-width: 50%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 1px solid #dee2e6;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+.security-info {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #0d6efd;
+}
+
+.security-topics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.security-topic {
+    padding: 1rem;
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.security-topic:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-color: #0d6efd;
+}
+
+.security-topic h4 {
+    color: #495057;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.security-topic p {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .security-image {
+        max-width: 75%;
+    }
+}
+
+@media (max-width: 768px) {
+    .security-content {
+        padding: 1.5rem;
+    }
+    
+    .security-image {
+        max-width: 90%;
+        max-height: 300px;
+    }
+    
+    .security-topics {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .security-image {
+        max-width: 95%;
+        max-height: 250px;
+    }
+}
+
+/* Estils per als mòduls d'Apache */
+.security-modules {
+    margin-top: 1.5rem;
+}
+
+.module-card {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #198754;
+    margin-bottom: 1rem;
+}
+
+.module-title {
+    color: #198754;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.module-card p {
+    margin-bottom: 0.5rem;
+    color: #495057;
+}
+
+.security-links {
+    padding: 1rem;
+    background-color: #e7f5ff;
+    border-radius: 6px;
+    border-left: 4px solid #0d6efd;
+}
+
+.security-links a {
+    color: #0d6efd;
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.security-links a:hover {
+    text-decoration: underline;
+}
+
+.security-links p {
+    margin-bottom: 0.5rem;
+}
+
+/* Botó de copiar codi */
+.copy-btn {
+    background-color: transparent;
+    border: 1px solid #75715e;
+    color: #f8f8f2;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.copy-btn:hover {
+    background-color: #49483e;
+}
+
+.copy-btn.copied {
+    background-color: #50fa7b;
+    color: #282a36;
+    border-color: #50fa7b;
+}
+
+/* Barra de títol del codi */
+.code-header {
+    background-color: #272822;
+    color: #f8f8f2;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.code-language {
+    background-color: #49483e;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+.green-italic-text {
+    color: #4caf50; /* Verd més clar */
+    font-style: italic;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.1em;
+}
+
+.centered-text {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.arrow-down {
+    text-align: center;
+    font-size: 2em; /* Més gran */
+    color: #f44336; /* Vermell */
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.solution-box {
+    background-color: #f0f0f0;
+    border-left: 4px solid #4a6fa5;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.graphically-text {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 1.1em;
+}

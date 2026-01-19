@@ -1,0 +1,305 @@
+body {
+    font-family: system-ui, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+}
+
+/* Sidebar més estret */
+.sidebar {
+    background-color: #ffffff;
+    border-right: 1px solid #dee2e6;
+    height: 100vh;
+    overflow-y: auto;
+    padding: 1rem !important; /* Menys padding */
+}
+
+.sidebar h4 {
+    color: #0d6efd;
+    font-weight: 600;
+    font-size: 1.2rem; /* Més petit */
+    margin-bottom: 1.5rem !important;
+}
+
+/* Elements del sidebar més compactes */
+.nav-link {
+    color: #495057;
+    padding: 0.4rem 0.6rem !important; /* Menys padding */
+    border-radius: 6px;
+    margin-bottom: 2px;
+    font-size: 0.9rem; /* Font més petita */
+}
+
+.nav-link:hover {
+    background-color: #e9ecef;
+    color: #0d6efd;
+}
+
+.nav-link.disabled {
+    pointer-events: none;  
+    color: #6c757d;        
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Iframe ocupa tot l'espai disponible */
+.content-frame {
+    width: 100%;
+    height: 100vh;
+    border: none;
+}
+
+/* Estils per al contingut dins de l'iframe */
+.mainFrame {
+    width: 100%;
+    height: 100vh;
+    background: url('/img/darkside.png') center center/cover no-repeat;
+    position: relative;
+}
+
+.mainFrame-text {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 0 15px rgba(0,0,0,0.7);
+    backdrop-filter: blur(3px);
+}
+
+/* ===== ESTILS GENERALS PER LES DIAPOSITIVES ===== */
+.slide-container {
+    min-height: 100vh;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+}
+
+/* Contingut MÉS AMPLE dins de l'iframe */
+.slide-content {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    padding: 2rem;
+    max-width: 95%; /* Ocupa gairebé tot l'espai */
+    margin: 0 auto;
+}
+
+.slide-title {
+    color: #0d6efd;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem; /* Més gran */
+}
+
+.concept-list {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Blocs de codi més amples */
+.code-block {
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.code-block pre {
+    margin: 0;
+    padding: 0;
+    border-radius: 8px;
+}
+
+.code-block code {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', monospace;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    display: block;
+    overflow-x: auto;
+}
+
+/* Estils per la barra de títol del codi */
+.code-header {
+    background-color: #272822;
+    color: #f8f8f2;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.code-language {
+    background-color: #49483e;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+.copy-btn {
+    background-color: transparent;
+    border: 1px solid #75715e;
+    color: #f8f8f2;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.copy-btn:hover {
+    background-color: #49483e;
+}
+
+.copy-btn.copied {
+    background-color: #50fa7b;
+    color: #282a36;
+    border-color: #50fa7b;
+}
+
+.important-note {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+/* Estils per a les accions i contingut */
+.actions-col {
+    flex: 1.5;
+    text-align: right;
+}
+
+.folder-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.folder-info {
+    margin-left: 10px;
+}
+
+.folder-name {
+    font-weight: bold;
+    color: #495057;
+}
+
+.folder-description {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-top: 2px;
+}
+
+.folder-files {
+    font-size: 0.85em;
+    color: #0d6efd;
+    margin-top: 3px;
+}
+
+/* Estils per a la llista de fitxers */
+.file-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #f1f1f1;
+    transition: background-color 0.2s;
+}
+
+.file-item:hover {
+    background-color: #f8f9fa;
+}
+
+.file-name {
+    flex-grow: 1;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.95em;
+}
+
+/* Animació per a les notificacions */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Millores per als botons */
+.btn-sm i {
+    margin-right: 3px;
+}
+
+.bi {
+    vertical-align: middle;
+}
+
+/* Estils per al navegador de directoris (versió antiga - potser no s'utilitza) */
+.directory-item.empty {
+    cursor: default;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.directory-item.empty:hover {
+    background-color: transparent;
+}
+
+/* Estil per a l'enllaç d'exemple (versió antiga) */
+.example-link {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 2px dashed #0d6efd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.example-link:hover {
+    background-color: #e9ecef;
+    border-style: solid;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Millores responsives per a mòbils */
+@media (max-width: 768px) {
+    .sidebar {
+        height: auto;
+        max-height: 40vh;
+        overflow-y: auto;
+    }
+    
+    .content-frame {
+        height: 60vh;
+    }
+    
+    .slide-content {
+        padding: 1rem;
+        margin: 0.5rem;
+    }
+    
+    .slide-title {
+        font-size: 1.5rem;
+    }
+}
+
+.poo-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #dee2e6;
+}

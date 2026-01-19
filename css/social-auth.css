@@ -1,0 +1,164 @@
+/* css/social-auth.css - Estils específics per a la pàgina de Social Authentication */
+
+/* Estils per al contingut de social authentication */
+.social-auth-content {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    padding: 2rem;
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+.social-auth-images {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1rem 0 2rem 0;
+    flex-wrap: wrap;
+}
+
+.social-auth-image-container {
+    text-align: center;
+    flex: 1;
+    min-width: 300px;
+    max-width: 45%;
+}
+
+.social-auth-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 1px solid #dee2e6;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+.image-caption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.social-auth-info {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #0d6efd;
+}
+
+.social-auth-topics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-auth-topic {
+    padding: 1rem;
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.social-auth-topic:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-color: #0d6efd;
+}
+
+.social-auth-topic h4 {
+    color: #495057;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.social-auth-topic p {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .social-auth-image-container {
+        min-width: 250px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .social-auth-content {
+        padding: 1.5rem;
+    }
+    
+    .social-auth-images {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .social-auth-image-container {
+        max-width: 90%;
+    }
+    
+    .social-auth-topics {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-auth-image-container {
+        max-width: 95%;
+    }
+    
+    .social-auth-image {
+        max-height: 250px;
+    }
+}
+
+/* Botó de copiar codi */
+.copy-btn {
+    background-color: transparent;
+    border: 1px solid #75715e;
+    color: #f8f8f2;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.copy-btn:hover {
+    background-color: #49483e;
+}
+
+.copy-btn.copied {
+    background-color: #50fa7b;
+    color: #282a36;
+    border-color: #50fa7b;
+}
+
+/* Barra de títol del codi */
+.code-header {
+    background-color: #272822;
+    color: #f8f8f2;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.code-language {
+    background-color: #49483e;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}

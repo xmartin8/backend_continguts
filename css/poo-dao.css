@@ -1,0 +1,269 @@
+/* Estils per la llista de conceptes */
+.concept-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.concept-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.concept-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.concept-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-color: #0d6efd;
+}
+
+.concept-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.concept-content {
+    flex: 1;
+}
+
+.concept-name {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.concept-description {
+    margin: 0.2rem 0 0 0;
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.3;
+}
+
+/* Estils especials per als 3 darrers conceptes (taronja) */
+.concept-special {
+    border-color: #ffc107;
+    background-color: #fffdf6;
+}
+
+.concept-special:hover {
+    border-color: #fd7e14;
+    background-color: #fff9e6;
+}
+
+.concept-number-orange {
+    background: linear-gradient(135deg, #fd7e14 0%, #e8590c 100%) !important;
+}
+
+.concept-name-orange {
+    color: #e8590c !important;
+}
+
+.concept-description-orange {
+    color: #fd7e14 !important;
+}
+
+/* Responsiu per a mòbils */
+@media (max-width: 768px) {
+    .concept-grid {
+        grid-template-columns: 1fr;
+        gap: 0.7rem;
+    }
+    
+    .concept-card {
+        padding: 0.7rem;
+    }
+}
+
+/* Estils per al navegador de directoris */
+.directory-container {
+    padding: 20px;
+}
+
+.directory-navigation {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.directory-path {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.path-item {
+    color: #0d6efd;
+    cursor: pointer;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.path-item:hover {
+    background-color: #e9ecef;
+    text-decoration: underline;
+}
+
+.path-item.current {
+    color: #495057;
+    cursor: default;
+}
+
+.path-item.current:hover {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.path-separator {
+    margin: 0 5px;
+    color: #6c757d;
+}
+
+.directory-content {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.directory-header {
+    display: flex;
+    background-color: #f8f9fa;
+    padding: 12px 20px;
+    font-weight: 600;
+    color: #495057;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.directory-col {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.name-col {
+    flex: 2;
+}
+
+.directory-items {
+    background-color: white;
+}
+
+.directory-item {
+    display: flex;
+    padding: 12px 20px;
+    border-bottom: 1px solid #f1f1f1;
+    transition: all 0.2s;
+    align-items: center;
+    cursor: pointer;
+}
+
+.directory-item:hover {
+    background-color: #f8f9fa;
+}
+
+.directory-item:last-child {
+    border-bottom: none;
+}
+
+.folder-icon, .file-icon {
+    margin-right: 10px;
+}
+
+.folder-icon {
+    font-size: 1.2em;
+}
+
+.file-icon {
+    font-size: 1.1em;
+    opacity: 0.8;
+}
+
+.loading-spinner {
+    text-align: center;
+    padding: 40px;
+}
+
+.loading-spinner p {
+    margin-top: 10px;
+    color: #6c757d;
+}
+
+/* Estil per a l'enllaç d'exemple (versió POO) */
+.example-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #e7f5ff;
+    border: 2px solid #0d6efd;
+    color: #0a58ca;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.example-link:hover {
+    background-color: #d0ebff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+}
+
+/* Estils específics de navegació POO */
+
+
+.slide-indicator {
+    text-align: center;
+    color: #6c757d;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+
+.poo-alert-info {
+    background-color: #d1ecf1;
+    border-left: 4px solid #0dcaf0;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
+.finish-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.code-block {
+  background: #0d1117; 
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.code-block pre {
+  margin: 0;
+  background: transparent;
+}
+

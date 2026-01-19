@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Mostrar codi PHP amb Highlight.js</title>
+
+    <!-- Highlight.js CSS fosc -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai-sublime.min.css">
+    
+
+    <style>
+        body {
+            font-family: monospace;
+            background-color: #2d2d2d; /* fons fosc */
+            color: #ccc;
+            padding: 20px;
+        }
+        pre {
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+<pre><code class="php" id="php-code">Carregant...</code></pre>
+
+<!-- Highlight.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/php.min.js"></script>
+<script>
+    const phpCode = `<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+require_once '../lib/hybridauth/src/autoload.php';
+require_once '../controller/social-auth-common.php';
+
+$config = [
+    'callback' => 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/oauth/amazon.php',
+    'keys' => [
+        'id' => 'XXXXX XXXXXX XXX XXXXXXX XXXXxxxxxxxxxxxxxxxxxxx',  
+        'secret' => 'XXXXX XXXXXX XXX XXXXXXX XXXXXXXXX XXXXXX XXX XXXXXXX XXXXx'
+    ],
+];
+
+try {
+    $amazon = new Hybridauth\Provider\Amazon($config);
+    $amazon->authenticate();
+    $accessToken = $amazon->getAccessToken();
+    $userProfile = $amazon->getUserProfile();
+    $email = $userProfile->email;
+    $displayName = $userProfile->displayName;
+    loginSocialProviderUser($email, $displayName, "Amazon");
+    closeWindowAndReloadParent();
+} catch (\Exception $e) {
+    echo "Error: " . $e->getMessage();
+}
+?>`;
+
+    const codeBlock = document.getElementById('php-code');
+    codeBlock.textContent = phpCode;
+
+    // Inicialitza Highlight.js
+    hljs.highlightElement(codeBlock);
+</script>
+
+</body>
+</html>
