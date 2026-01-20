@@ -303,3 +303,94 @@ body {
     padding-top: 1rem;
     border-top: 1px solid #dee2e6;
 }
+
+/* ===== ESTILS PER A TEXT MÉS GRAN A TOTES LES PÀGINES ===== */
+
+/* Classe genèrica per a text més gran */
+.text-large {
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
+.text-large p {
+    margin-bottom: 1rem;
+}
+
+.text-large .lead {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #495057;
+}
+
+/* Classes per a mides específiques */
+.text-lg {
+    font-size: 1.2rem !important;
+    line-height: 1.6;
+}
+
+.text-xl {
+    font-size: 1.3rem !important;
+    line-height: 1.7;
+}
+
+.text-xxl {
+    font-size: 1.4rem !important;
+    line-height: 1.8;
+}
+
+/* Aplicar a llistes */
+.text-large ul,
+.text-large ol {
+    font-size: 1.1rem;
+}
+
+.text-large li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* Per aplicar a tot el contingut d'una diapositiva */
+.slide-content-enlarged {
+    font-size: 1.15rem;
+}
+
+.slide-content-enlarged p {
+    font-size: inherit;
+    line-height: 1.7;
+}
+
+.slide-content-enlarged li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Classe per a paràgrafs destacats */
+.paragraph-emphasis {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    margin-bottom: 1.2rem;
+}
+
+.requadre {
+  border: 3px solid #00a651;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.requadre p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.requadre-arrow {
+  font-size: 2.5rem;
+  color: #e10600;
+  margin: 0.5rem 0;
+}
+
+.requadre-impacte {
+  font-weight: bold;
+}

@@ -262,44 +262,6 @@ const slides = [
     }
 ];
 
-// Variables per controlar la diapositiva actual
-let currentSlideIndex = 0;
-
-// Elements DOM
-let slideContent, prevBtn, nextBtn, currentSlideSpan, totalSlidesSpan;
-
-
-// Mostrar diapositiva
-function showSlide(index) {
-    currentSlideIndex = index;
-
-    slideContent.innerHTML = slides[index].content;
-    currentSlideSpan.textContent = index + 1;
-
-    prevBtn.disabled = index === 0;
-
-    if (index === slides.length - 1) {
-        nextBtn.textContent = 'Tornar';
-        nextBtn.classList.add('btn-success');
-        nextBtn.classList.remove('btn-outline-primary');
-    } else {
-        nextBtn.textContent = 'Següent';
-        nextBtn.classList.remove('btn-success');
-        nextBtn.classList.add('btn-outline-primary');
-    }
-
-    injectPhpExamples();
-setTimeout(highlightCodeBlocks, 50);
-//////////setTimeout(highlightCodeBlocks, 50);
-}
-
-
-// Diapositiva anterior
-function showPreviousSlide() {
-    if (currentSlideIndex > 0) {
-        showSlide(currentSlideIndex - 1);
-    }
-}
 
 // =============================================
 // FUNCIONS NOVES PER OBRIR CARPETES REALS
@@ -524,28 +486,5 @@ function goBackToSlides() {
     showSlide(2); // Torna a la diapositiva d'exemple de Trait
 }
 
-// =============================================
-// INICIALITZACIÓ
-// =============================================
-
-// Inicialitzar
-function init() {
-    slideContent = document.getElementById('slideContent');
-    prevBtn = document.getElementById('prevBtn');
-    nextBtn = document.getElementById('nextBtn');
-    currentSlideSpan = document.getElementById('currentSlide');
-
-    prevBtn.addEventListener('click', onPrevClick);
-    nextBtn.addEventListener('click', onNextClick);
-
-    showSlide(0);
-}
-
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-} else {
-    init();
-}
 
 

@@ -9,12 +9,6 @@ const slides = [
 
                 <div class="cookies-info">
                     <h3 class="slide-title">Cookies & Sessions en PHP</h3>
-                    <p>
-                        Les cookies i sessions són essencials per mantenir l'estat de l'usuari
-                        en aplicacions web. Permeten recordar informació entre diferents pàgines
-                        i visites.
-                    </p>
-
                     <div class="cookies-topics">
                         <div class="cookies-topic">
                             <h4>🍪 Què són les Cookies?</h4>
@@ -62,107 +56,34 @@ const slides = [
   },
   {
     title: "2. Crear i gestionar Cookies",
-    content: `
-            <h2 class="slide-title">2. Crear i gestionar Cookies</h2>
-            <p>Contingut en desenvolupament...</p>
-        `
+    content: `<h2 class="slide-title">2. Crear i gestionar Cookies</h2><p>Contingut en desenvolupament...</p>`
   },
   {
     title: "3. Sessions PHP bàsiques",
-    content: `
-            <h2 class="slide-title">3. Sessions PHP bàsiques</h2>
-            <p>Contingut en desenvolupament...</p>
-        `
+    content: `<h2 class="slide-title">3. Sessions PHP bàsiques</h2><p>Contingut en desenvolupament...</p>`
   },
   {
     title: "4. Comparativa: Cookies vs Sessions",
-    content: `
-            <h2 class="slide-title">4. Comparativa: Cookies vs Sessions</h2>
-            <p>Contingut en desenvolupament...</p>
-        `
+    content: `<h2 class="slide-title">4. Comparativa: Cookies vs Sessions</h2><p>Contingut en desenvolupament...</p>`
   },
   {
     title: "5. Configuració de Sessions",
-    content: `
-            <h2 class="slide-title">5. Configuració de Sessions</h2>
-            <p>Contingut en desenvolupament...</p>
-        `
+    content: `<h2 class="slide-title">5. Configuració de Sessions</h2><p>Contingut en desenvolupament...</p>`
   },
   {
     title: "6. Seguretat en Sessions",
-    content: `
-            <h2 class="slide-title">6. Seguretat en Sessions</h2>
-            <p>Contingut en desenvolupament...</p>
-        `
+    content: `<h2 class="slide-title">6. Seguretat en Sessions</h2><p>Contingut en desenvolupament...</p>`
   },
   {
     title: "7. Cookies i GDPR",
-    content: `
-            <h2 class="slide-title">7. Cookies i GDPR</h2>
-            <p>Contingut en desenvolupament...</p>
-        `
+    content: `<h2 class="slide-title">7. Cookies i GDPR</h2><p>Contingut en desenvolupament...</p>`
   },
   {
     title: "8. Almacenament Alternatiu",
-    content: `
-            <h2 class="slide-title">8. Almacenament Alternatiu</h2>
-            <p>Contingut en desenvolupament...</p>
-        `
+    content: `<h2 class="slide-title">8. Almacenament Alternatiu</h2><p>Contingut en desenvolupament...</p>`
   },
   {
     title: "9. Millores Pràctiques",
-    content: `
-            <h2 class="slide-title">9. Millores Pràctiques</h2>
-            <p>Contingut en desenvolupament...</p>
-        `
+    content: `<h2 class="slide-title">9. Millores Pràctiques</h2><p>Contingut en desenvolupament...</p>`
   }
 ];
-
-// Variables per controlar la diapositiva actual
-let currentSlideIndex = 0;
-
-// Elements DOM
-let slideContent, prevBtn, nextBtn, currentSlideSpan, totalSlidesSpan;
-
-// Mostrar diapositiva
-function showSlide(index) {
-    currentSlideIndex = index;
-
-    slideContent.innerHTML = slides[index].content;
-    currentSlideSpan.textContent = index + 1;
-
-    prevBtn.disabled = index === 0;
-
-    if (index === slides.length - 1) {
-        nextBtn.textContent = 'Tornar';
-        nextBtn.classList.add('btn-success');
-        nextBtn.classList.remove('btn-outline-primary');
-    } else {
-        nextBtn.textContent = 'Següent';
-        nextBtn.classList.remove('btn-success');
-        nextBtn.classList.add('btn-outline-primary');
-    }
-
-    setTimeout(highlightCodeBlocks, 50);
-}
-
-
-// Inicialitzar
-function init() {
-    slideContent = document.getElementById('slideContent');
-    prevBtn = document.getElementById('prevBtn');
-    nextBtn = document.getElementById('nextBtn');
-    currentSlideSpan = document.getElementById('currentSlide');
-
-    prevBtn.addEventListener('click', onPrevClick);
-    nextBtn.addEventListener('click', onNextClick);
-
-    showSlide(0);
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", init);
-} else {
-  init();
-}
-

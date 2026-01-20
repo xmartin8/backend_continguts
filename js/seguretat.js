@@ -9,12 +9,6 @@ const slides = [
 
                 <div class="security-info">
                     <h3 class="slide-title">Configuració de la Seguretat en PHP</h3>
-                    <p>
-                        La seguretat en aplicacions web PHP és crítica per protegir dades
-                        sensibles i prevenir atacs comuns. Principals aspectes
-                        a considerar:
-                    </p>
-
                     <div class="security-topics">
                         <div class="security-topic">
                             <h4>🔢 Versions de PHP</h4>
@@ -62,7 +56,7 @@ const slides = [
                         </div>
 
                         <div class="security-topic">
-                            <h4>🚫 Evitar inclusió de fitxers remots</h4>
+                            <h4> Evitar inclusió de fitxers remots</h4>
                             <p>Prevenció d'inclusions de fitxers externs maliciosos que podrien comprometre el servidor.</p>
                         </div>
 
@@ -81,9 +75,10 @@ const slides = [
             </div>
         `,
   },
-    {
-        title: "1. Versions de PHP",
-        content: `
+  {
+    title: "1. Versions de PHP",
+    content: `
+    <div class="slide-content-enlarged">
             <h2 class="slide-title">1. Versions de PHP</h2>
             
             <div class="important-note mb-4">
@@ -122,12 +117,36 @@ const slides = [
                     </ul>
                 </div>
             </div>
+            </div>
+            
+        `,
+  },
+{
+    title: "2. Per què cal documentar i comentar?",
+    content: `
+            <h2 class="slide-title">2. Per què cal documentar i comentar?</h2>
+            
+            <div class="important-note mb-4 text-large">
+                <p>La documentació i els comentaris són una part essencial de la seguretat perquè:</p>
+            </div>
+            <div class="text-xl">
+            <ul class="concept-list">
+                <li><strong>Auditoria de seguretat</strong>: Permet revisar ràpidament els punts crítics</li>
+                <li><strong>Transferència de coneixement</strong>: Evita que vulnerabilitats quedin ocultes</li>
+                <li><strong>Manteniment</strong>: Actualitzacions segures sense introduir nous riscos</li>
+                <li><strong>Documentació de decisions</strong>: Explica perquè s'han implementat certes mesures de seguretat</li>
+                <li><strong>Identificació de dependencies</strong>: Alertes sobre biblioteques o components vulnerables</li>
+            </ul>
+            </div>
+            <div class="mt-4 text-large">
+                <p>Sense una documentació adequada, les vulnerabilitats poden passar desapercebudes durant anys, i les correccions poden introduir nous errors.</p>
+            </div>
             
         `
-    },
-    {
-        title: "3. PDO amb Prepared Statements",
-        content: `
+},
+  {
+    title: "3. PDO amb Prepared Statements",
+    content: `
             <h2 class="slide-title">3. PDO amb Prepared Statements</h2>
             <div class="code-block">
                 <div class="code-header">
@@ -150,12 +169,13 @@ try {
 }
 ?&gt;</code></pre>
             </div>
-        `
-    },
+        `,
+  },
   {
     title: "4. Validar les dades d'entrada",
     content: `
             <h2 class="slide-title">4. Validar les dades d'entrada</h2>
+            <div class="text-large">
             <p>Funcions utilitzades:</p>
             <ul class="concept-list">
                 <li><code>htmlspecialchars();</code></li>
@@ -164,7 +184,7 @@ try {
                 <li><code>bindparam();</code></li>
                 <li><code>preg_match(patró, cadena_entr, [array_resultats], ,[inici_cerca])</code></li>
             </ul>
-            
+            </div>
             <div class="code-block mt-3">
                 <div class="code-header">
                     <span>validacio_data.php</span>
@@ -180,27 +200,38 @@ if (preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $date)
             </div>
         `,
   },
-  {
+{
     title: "5. Cal pujar tots els fitxers del MVC?",
     content: `
             <h2 class="slide-title">5. Cal pujar tots els fitxers del vostre MVC?</h2>
-            <p>Frameworks de PHP com Laravel, tenen una estructura de fitxers MVC per tant una estructura de fitxers gran.</p>
-            <p>Per exemple, amb Laravel se'ns genera una estructura de fitxers semblant a aquesta.</p>
-                      <div class="security-image-container">
-                    <img src="../img/estructuraLaravel.png" alt="Estructura Laravel" class="security-image" />
-                </div>      
-            <div class="important-note mt-3">
+            
+            <div class="row align-items-center text-xxl">
+                <div class="col-md-6">
+                    <div class="security-text-large">
+                        <p class="lead">Frameworks de PHP com Laravel tenen una estructura de fitxers MVC, per tant una estructura de fitxers gran.</p>
+                        <p class="lead">Per exemple, amb Laravel se'ns genera una estructura de fitxers semblant a aquesta:</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="security-image-container">
+                        <img src="../img/estructuraLaravel.png" alt="Estructura Laravel" class="security-image img-fluid rounded shadow" />
+                    </div>
+                </div>
+            </div>
+            
+            <div class="important-note mt-4 text-xxl">
                 <h5>Reflexió:</h5>
                 <p>És necessari "penjar" tots els fitxers de la nostra estructura al nostre servidor web o només caldria penjar la nostra carpeta pública?</p>
             </div>
         `,
-  },
+},
   {
     title: "5. Solució",
-content: `
+    content: `
     <h2 class="slide-title">5. Cal pujar tots els fitxers del vostre MVC?</h2>
-    
-    <p class="green-italic-text">I què passa si pengem tots els fitxers......?</p>
+    <div class="text-large">
+    <p class="green-italic-text text-large">I què passa si pengem tots els fitxers......?</p>
     
     <p class="centered-text">Atacs maliciosos per accedir als vostres fitxers i inspeccionar la vostra lògica</p>
     
@@ -209,11 +240,12 @@ content: `
     <p class="centered-text">Trobar forats de seguretat o errors.</p>
     
     <div class="solution-box">
-        <p><strong>Solució:</strong> "Capar les peticions que no vinguin directament d'Apache.</p>
-        <p>De manera que les peticions pròpies de la nostra IP (les peticions que es generen automàticament) s'hi permeti accés, mentre que si algú veu referenciat un arxiu que no és dins de públic i intenta accedir-hi, com que la IP serà diferent de la d'Apache, doncs denegar la petició".</p>
+        <p lead><strong>Solució:</strong> "Capar les peticions que no vinguin directament d'Apache.</p>
+        <p lead>De manera que les peticions pròpies de la nostra IP (les peticions que es generen automàticament) s'hi permeti accés, mentre que si algú veu referenciat un arxiu que no és dins de públic i intenta accedir-hi, com que la IP serà diferent de la d'Apache, doncs denegar la petició".</p>
     </div>
     
-    <p class="graphically-text"><strong>Gràficament...</strong></p>
+    <p class="graphically-text lead"><strong>Gràficament...</strong></p>
+    </div>
 `,
   },
   {
@@ -261,6 +293,7 @@ content: `
     title: "5. Cal pujar tots els fitxers del vostre MVC?",
     content: `
             <h2 class="slide-title">5. Cal pujar tots els fitxers del vostre MVC?</h2>
+            <div class="text-large">
             <p>Instal·lant i configurant els següents mòduls d'Apache:</p>
             
             <div class="security-modules">
@@ -282,43 +315,148 @@ content: `
                 <p><a href="https://httpd.apache.org/docs/trunk/es/mod/mod_authz_host.html" target="_blank">https://httpd.apache.org/docs/trunk/es/mod/mod_authz_host.html</a></p>
                 <p><a href="https://httpd.apache.org/docs/trunk/es/mod/mod_authn_core.html" target="_blank">https://httpd.apache.org/docs/trunk/es/mod/mod_authn_core.html</a></p>
             </div>
+            </div>
         `,
   },
-  {
-    title: "6. Configuració .htaccess",
+{
+    title: "5.1 Configurar els mòduls d'Apache",
     content: `
-            <h2 class="slide-title">6. Configuració del fitxer .htaccess</h2>
-            <p><a href="https://www.geeksforgeeks.org/what-is-htaccess-file-in-php/" target="_blank">https://www.geeksforgeeks.org/what-is-htaccess-file-in-php/</a></p>
+            <h2 class="slide-title">5.1 Configurar els mòduls d'Apache</h2>
+        <div class="text-large">    
+            <div class="important-note mb-4">
+                <p>Per protegir els fitxers no públics del nostre MVC, necessitem configurar dos mòduls d'Apache:</p>
+                <ul class="concept-list">
+                    <li><strong>mod_authz_host</strong> - Control d'accés basat en host/IP</li>
+                    <li><strong>mod_authn_core</strong> - Autenticació bàsica</li>
+                </ul>
+            </div>
+            
+            <h4>📦 1. Instal·lar paquets d'Apache</h4>
+            <p>Assegurar-se que tenim instal·lat el paquet d'Apache en el sistema. Si no ho tens, pots instal·lar-lo:</p>
+            
+            <div class="code-block">
+                <div class="code-header">
+                    <span>Sistemes basats en Debian/Ubuntu</span>
+                </div>
+                <pre><code class="bash"># Actualitzar llista de paquets
+sudo apt update
+
+# Instal·lar Apache
+sudo apt install apache2
+
+# Verificar que Apache està actiu
+sudo systemctl status apache2</code></pre>
+            </div>
+            
+            <div class="code-block mt-3">
+                <div class="code-header">
+                    <span>Sistemes basats en Red Hat/CentOS</span>
+                </div>
+                <pre><code class="bash"># Instal·lar Apache
+sudo yum install httpd
+
+# Iniciar Apache
+sudo systemctl start httpd
+
+# Habilitar inici automàtic
+sudo systemctl enable httpd</code></pre>
+            </div>
+            
+            <h4 class="mt-4">🔧 2. Activar els mòduls necessaris</h4>
+            <p>Activar els mòduls <code>mod_authz_host</code> i <code>mod_authn_core</code> en la configuració d'Apache:</p>
+            
+            <div class="code-block">
+                <div class="code-header">
+                    <span>/etc/apache2/apache2.conf o /etc/httpd/conf/httpd.conf</span>
+                </div>
+                <pre><code class="apacheconf"># Carregar els mòduls necessaris
+LoadModule authz_host_module modules/mod_authz_host.so
+LoadModule authn_core_module modules/mod_authn_core.so
+
+# O bé en Debian/Ubuntu, activar amb a2enmod
+# sudo a2enmod authz_host
+# sudo a2enmod authn_core</code></pre>
+            </div>
+            
+            <h4 class="mt-4">🔄 3. Reiniciar el servidor Apache</h4>
+            <div class="code-block">
+                <div class="code-header">
+                    <span>Reiniciar el servei</span>
+                </div>
+                <pre><code class="bash"># Sistemes Debian/Ubuntu
+sudo systemctl restart apache2
+
+# Sistemes Red Hat/CentOS
+sudo systemctl restart httpd
+
+# Verificar que els mòduls estan actius
+sudo apache2ctl -M | grep -E "authz_host|authn_core"
+# o
+httpd -M | grep -E "authz_host|authn_core"</code></pre>
+            </div>
+            
+            <div class="important-note mt-4">
+                <h5>✅ Verificació dels mòduls</h5>
+                <p>Després de reiniciar, verifica que els mòduls estan carregats correctament:</p>
+                <ul class="concept-list">
+                    <li><code>authz_host_module</code> - Permet control d'accés per IP/hostname</li>
+                    <li><code>authn_core_module</code> - Proporciona funcionalitats bàsiques d'autenticació</li>
+                </ul>
+            </div>
+            </div>
+        `
+},
+{
+    title: "6. Configuració del fitxer .htaccess",
+    content: `
+            <h2 class="slide-title">6. Configuració del fitxer .htaccess</h2>           
             
             <ul class="concept-list">
-                <li>Canviar el fitxer d'arrencada del web</li>
-                <li>Blocar una IP o un rang d'IP</li>
-                <li>Redirigir a l'estat 301 (moure a una nova URL)</li>
-                <li>Fer servir (o no) les www de la URL</li>
-                <li>Redirigir d'HTTP a HTTPs</li>
-                <li>Personalitzar la pàgina d'errors</li>
-                <li>Demanar autenticació per a accedir a una carpeta</li>
+                <li>    Canviar el fitxer d'arrencada del web</li>
+                <li>    Blocar una IP o un rang d'IP</li>
+                <li>    Redirigir a l'estat 301 (moure a una nova URL)</li>
+                <li>    Fer servir (o no) les www de la URL</li>
+                <li>    Redirigir d'HTTP a HTTPs</li>
+                <li>    Personalitzar la pàgina d'errors</li>
+                <li>    Demanar autenticació per a accedir a una carpeta</li>
             </ul>
             
             <p><a href="https://en.wikipedia.org/wiki/HTTP_301" target="_blank">https://en.wikipedia.org/wiki/HTTP_301</a></p>
+            <p><a href="https://www.geeksforgeeks.org/what-is-htaccess-file-in-php/" target="_blank">https://www.geeksforgeeks.org/what-is-htaccess-file-in-php/</a></p>
         `,
-  },
-  {
-    title: "7. Restricció d'accés",
-    content: `
-            <h2 class="slide-title">7. Restricció d'accés a fitxers i carpetes</h2>
-            <p><code>open_basedir</code> és una directiva de configuració que es pot utilitzar per restringir l'accés a fitxers i carpetes en un lloc web.</p>
-            
-            <p>Quan s'activa aquesta opció, el servidor PHP només permetrà l'accés a fitxers i carpetes dins del directori base especificat.</p>
-            
-            <div class="important-note">
-                <p>Això pot ser útil per evitar que un script maliciós accedeixi a fitxers sensibles del sistema o modifiqui altres fitxers del lloc web.</p>
-            </div>
-            
-            <p>Al fitxer <code>php.ini</code>:</p>
-            <pre class="bg-light p-3 rounded"><code>open_basedir = /ruta/al/directoribase</code></pre>
-        `,
-  },
+},
+{
+  title: "7. Restricció d'accés",
+  content: `
+    <h2 class="slide-title">7. Restricció d'accés a fitxers i carpetes</h2>
+        <div class="text-large"> 
+    <p>
+      <code>open_basedir</code> és una directiva de configuració que es pot utilitzar per
+      restringir l'accés a fitxers i carpetes en un lloc web. Quan s'activa aquesta opció,
+      el servidor PHP només permetrà l'accés a fitxers i carpetes dins del directori base
+      especificat. Això pot ser útil per evitar que un script maliciós accedeixi a fitxers
+      sensibles del sistema o modifiqui altres fitxers del lloc web.
+    </p>
+
+    <p>
+      Per utilitzar la funció <code>open_basedir</code>, hem d’afegir la següent línia
+      al fitxer de configuració de PHP (normalment anomenat <code>php.ini</code>):
+    </p>
+
+    <div class="code-block">
+      <pre><code class="language-ini">
+; open_basedir, if set, limits all file operations to the defined directory
+; and below. This directive makes most sense if used in a per-directory
+; or per-virtualhost web server configuration file.
+; Note: disables the realpath cache
+; http://php.net/open-basedir
+open_basedir = /ruta/al/directoribase
+      </code></pre>
+    </div>
+    </div>
+  `,
+},
+
   {
     title: "8. urlencode(string)",
     content: `
@@ -347,29 +485,51 @@ echo $encoded_string; // Mostra "Hola%2C+com+est%C3%A0s%3F"
             </div>
         `,
   },
-  {
-    title: "9. Evitar el Hotlinking",
-    content: `
-            <h2 class="slide-title">9. Evitar el Hotlinking</h2>
-            <p>Què és el Hotlinking?</p>
-            <p>Altres webmasters agafen imatges, etc de la nostra web i si aquest altre web te molts visitants al dia, llavors s'han de carregar les nostres imatges...</p>
-            <p>Afectació a l'ampla de banda del nostre Hosting.</p>
-            
-            <div class="important-note mt-3">
-                <p>Dit d'una altra manera: es refereix a l'ús d'enllaços a fitxers (com ara imatges) des d'un altre lloc web.</p>
-            </div>
-            
-            <div class="code-block mt-3">
-                <div class="code-header">
-                    <span>.htaccess - Anti-hotlinking</span>
-                </div>
-                <pre><code>RewriteEngine On
-RewriteCond %{HTTP_REFERER} !^http://(.+\.)?elnostredomini\.com/ [NC]
+{
+  title: "9. Evitar el Hotlinking",
+  content: `
+    <h2 class="slide-title">9. Evitar el Hotlinking</h2>
+<div class="text-large">
+    <p><strong>Què és el Hotlinking?</strong></p>
+
+    <div class="requadre">
+      <p>
+        Altres webmasters agafen imatges, etc. de la nostra web i,
+        si aquest altre web té molts visitants al dia, llavors s’han
+        de carregar les nostres imatges…
+      </p>
+
+      <div class="requadre-arrow">⬇</div>
+
+      <p class="requadre-impacte">
+        Afectació a l’ampla de banda del nostre <strong>Hosting</strong>
+      </p>
+    </div>
+
+    <p class="mt-3"><strong>Dit d’una altra manera:</strong></p>
+
+    <p>
+      Es refereix a l’ús d’enllaços a fitxers (com ara imatges) des d’un
+      altre lloc web. Per exemple, si un lloc web enllaça a una imatge
+      emmagatzemada en el teu lloc web sense el teu permís, això es
+      coneix com a <em>hotlinking</em>.
+    </p>
+
+    <div class="code-block mt-4">
+      <div class="code-header">
+        <span>.htaccess – Anti-hotlinking</span>
+      </div>
+      <pre><code class="language-apache">
+RewriteEngine On
+RewriteCond %{HTTP_REFERER} !^http://(.+\\.)?elnostredomini\\.com/ [NC]
 RewriteCond %{HTTP_REFERER} !^$
-RewriteRule .*\.(jpg|gif|bmp|png)$ http://hotlink.elnostredomini.com/hotlinking_prohibit.jpg [L]</code></pre>
-            </div>
-        `,
-  },
+RewriteRule .*\\.(jpg|gif|bmp|png)$ http://hotlink.elnostredomini.com/hotlinking_prohibit.jpg [L]
+      </code></pre>
+    </div>
+    </div>
+  `,
+},
+
   {
     title: "10. Evitar inclusió fitxers remots",
     content: `
@@ -408,57 +568,3 @@ RewriteRule .*\.(jpg|gif|bmp|png)$ http://hotlink.elnostredomini.com/hotlinking_
         `,
   },
 ];
-
-// Variables per controlar la diapositiva actual
-let currentSlideIndex = 0;
-
-// Elements DOM
-let slideContent, prevBtn, nextBtn, currentSlideSpan, totalSlidesSpan;
-
-// Elimina o comenta la funció injectPhpExamples() COMPLETA
-// function injectPhpExamples() { ... }
-
-// Canvia la funció showSlide per:
-function showSlide(index) {
-    currentSlideIndex = index;
-
-    slideContent.innerHTML = slides[index].content;
-    currentSlideSpan.textContent = index + 1;
-
-    prevBtn.disabled = index === 0;
-
-    if (index === slides.length - 1) {
-        nextBtn.textContent = 'Tornar';
-        nextBtn.classList.add('btn-success');
-        nextBtn.classList.remove('btn-outline-primary');
-    } else {
-        nextBtn.textContent = 'Següent';
-        nextBtn.classList.remove('btn-success');
-        nextBtn.classList.add('btn-outline-primary');
-    }
-
-    // Wait for DOM to update, then highlight code
-    setTimeout(highlightCodeBlocks, 50);
-}
-
-
-// Inicialitzar
-function init() {
-    slideContent = document.getElementById('slideContent');
-    prevBtn = document.getElementById('prevBtn');
-    nextBtn = document.getElementById('nextBtn');
-    currentSlideSpan = document.getElementById('currentSlide');
-
-    prevBtn.addEventListener('click', onPrevClick);
-    nextBtn.addEventListener('click', onNextClick);
-
-    showSlide(0);
-}
-
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", init);
-} else {
-  init();
-}
-

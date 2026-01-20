@@ -1,6 +1,6 @@
 const slides = [
   {
-    title: "api en PHP",
+    title: "API",
     content: `
             <div class="api-content">
                 <div class="api-image-container">
@@ -8,53 +8,48 @@ const slides = [
                 </div>
 
                 <div class="api-info">
-                    <h3 class="slide-title">api en PHP</h3>
-                    <p>
-                        api (Asynchronous JavaScript and XML) permet actualitzar parts d'una pàgina web
-                        sense recarregar tota la pàgina. Això crea una experiència d'usuari més ràpida i dinàmica.
-                    </p>
+                    <h3 class="slide-title">API</h3>
+<div class="api-topics">
+    <div class="api-topic">
+        <h4>🔌 Què és una API?</h4>
+        <p>Interfície de Programació d'Aplicacions (API) que permet la comunicació entre diferents sistemes de programari.</p>
+    </div>
 
-                    <div class="api-topics">
-                        <div class="api-topic">
-                            <h4>⚡ Què és api?</h4>
-                            <p>Tècnica per comunicar-se amb el servidor de forma asíncrona, permetent actualitzacions parcials de pàgines web.</p>
-                        </div>
+    <div class="api-topic">
+        <h4>🔄 Com funciona una API</h4>
+        <p>Les API reben sol·licituds (requests) via HTTP, les processen i retornen respostes (responses) en format estructurat.</p>
+    </div>
 
-                        <div class="api-topic">
-                            <h4>🔄 Com funciona</h4>
-                            <p>JavaScript envia una petició HTTP al servidor, processa la resposta i actualitza el DOM sense recarregar la pàgina.</p>
-                        </div>
+    <div class="api-topic">
+        <h4>🔑 Tipus d'API</h4>
+        <p>REST, SOAP, GraphQL, gRPC. REST és el més popular per a serveis web actuals.</p>
+    </div>
 
-                        <div class="api-topic">
-                            <h4>📡 XMLHttpRequest</h4>
-                            <p>L'objecte nadiu de JavaScript per fer peticions HTTP asíncrones. La base de tot api.</p>
-                        </div>
+    <div class="api-topic">
+        <h4>📊 Mètodes HTTP</h4>
+        <p>GET (obtenir), POST (crear), PUT (actualitzar), DELETE (eliminar) - verbs principals per a operacions CRUD.</p>
+    </div>
 
-                        <div class="api-topic">
-                            <h4>🆕 Fetch API</h4>
-                            <p>API moderna alternativa a XMLHttpRequest, basada en promeses i més fàcil d'utilitzar.</p>
-                        </div>
+    <div class="api-topic">
+        <h4>📝 Format de dades API</h4>
+        <p>JSON és l'estàndard actual per a APIs REST. XML encara s'utilitza en APIs SOAP i empresarials.</p>
+    </div>
 
-                        <div class="api-topic">
-                            <h4>📊 Format de dades</h4>
-                            <p>api pot utilitzar XML, JSON, HTML o text pla. JSON és el format més utilitzat actualment.</p>
-                        </div>
+    <div class="api-topic">
+        <h4>🔐 Autenticació API</h4>
+        <p>API Keys, OAuth 2.0, JWT Tokens, Basic Auth. OAuth 2.0 és el mètode més utilitzat per a autorització.</p>
+    </div>
 
-                        <div class="api-topic">
-                            <h4>🎯 Aplicacions pràctiques</h4>
-                            <p>Autocompletar formularis, carregar més contingut, validació en temps real, actualitzacions automàtiques.</p>
-                        </div>
+    <div class="api-topic">
+        <h4>📡 Endpoints i Rutes</h4>
+        <p>URLs específiques que defineixen els punts d'accés als recursos de l'API (/usuarios, /productos, etc.).</p>
+    </div>
 
-                        <div class="api-topic">
-                            <h4>🛡️ Seguretat</h4>
-                            <p>Consideracions de seguretat: CSRF, validació en servidor, sanitització de dades, CORS.</p>
-                        </div>
-
-                        <div class="api-topic">
-                            <h4>⚙️ Compatibilitat</h4>
-                            <p>Suportat per tots els navegadors moderns. Per a navegadors antics, es requereixen polyfills.</p>
-                        </div>
-                    </div>
+    <div class="api-topic">
+        <h4>📚 Documentació API</h4>
+        <p>Eina essencial per als desenvolupadors. OpenAPI/Swagger és l'estàndard per a documentar APIs REST.</p>
+    </div>
+</div>
                 </div>
             </div>
         `,
@@ -117,51 +112,7 @@ const slides = [
   }
 ];
 
-// Variables per controlar la diapositiva actual
-let currentSlideIndex = 0;
-
-// Elements DOM
-let slideContent, prevBtn, nextBtn, currentSlideSpan, totalSlidesSpan;
-
-// Mostrar diapositiva
-function showSlide(index) {
-    currentSlideIndex = index;
-
-    slideContent.innerHTML = slides[index].content;
-    currentSlideSpan.textContent = index + 1;
-
-    prevBtn.disabled = index === 0;
-
-    if (index === slides.length - 1) {
-        nextBtn.textContent = 'Tornar';
-        nextBtn.classList.add('btn-success');
-        nextBtn.classList.remove('btn-outline-primary');
-    } else {
-        nextBtn.textContent = 'Següent';
-        nextBtn.classList.remove('btn-success');
-        nextBtn.classList.add('btn-outline-primary');
-    }
-
-    setTimeout(highlightCodeBlocks, 50);
-}
 
 
-// Inicialitzar
-function init() {
-    slideContent = document.getElementById('slideContent');
-    prevBtn = document.getElementById('prevBtn');
-    nextBtn = document.getElementById('nextBtn');
-    currentSlideSpan = document.getElementById('currentSlide');
 
-    prevBtn.addEventListener('click', onPrevClick);
-    nextBtn.addEventListener('click', onNextClick);
-
-    showSlide(0);
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", init);
-} else {
-  init();
-}
 

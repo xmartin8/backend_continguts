@@ -9,11 +9,6 @@ const slides = [
 
                 <div class="errors-info">
                     <h3 class="slide-title">Gestió d'Errors en PHP</h3>
-                    <p>
-                        La gestió d'errors és crucial per a desenvolupar aplicacions PHP robustes i fiables.
-                        PHP ofereix múltiples mecanismes per a detectar, registrar i gestionar errors.
-                    </p>
-
                     <div class="errors-topics">
                         <div class="errors-topic">
                             <h4>⚠️ Tipus d'Errors</h4>
@@ -21,7 +16,7 @@ const slides = [
                         </div>
 
                         <div class="errors-topic">
-                            <h4>🎯 Nivells d'Error</h4>
+                            <h4> Nivells d'Error</h4>
                             <p>Es poden configurar els nivells d'error que es mostren i registren mitjançant error_reporting().</p>
                         </div>
 
@@ -31,7 +26,7 @@ const slides = [
                         </div>
 
                         <div class="errors-topic">
-                            <h4>🚫 Excepcions</h4>
+                            <h4> Excepcions</h4>
                             <p>Les excepcions permeten un control estructurat dels errors mitjançant try...catch.</p>
                         </div>
 
@@ -46,7 +41,7 @@ const slides = [
                         </div>
 
                         <div class="errors-topic">
-                            <h4>📊 Error Logging</h4>
+                            <h4>Error Logging</h4>
                             <p>Configuració de log d'errors per a producció vs desenvolupament.</p>
                         </div>
 
@@ -68,7 +63,7 @@ const slides = [
                 <p>PHP té diversos tipus d'errors que es classifiquen en diferents nivells de severitat.</p>
             </div>
             
-            <h4>📊 Taula de Nivells d'Error:</h4>
+            <h4>Taula de Nivells d'Error:</h4>
             <table class="errors-table">
                 <tr>
                     <th>Constant</th>
@@ -156,6 +151,11 @@ const slides = [
                     <td>Tots els errors i advertències.</td>
                 </tr>
             </table>
+        `
+  },
+    {
+    title: "2.1. TTTTTTTTTTTTT",
+    content: `
             
             <div class="code-block mt-4">
                 <div class="code-header">
@@ -165,28 +165,28 @@ const slides = [
                         <button class="copy-btn ms-2" onclick="copyCode('php-error-levels', this)">Copiar</button>
                     </div>
                 </div>
-                <pre><code class="php" id="php-error-levels">&lt;?php
-// Configurar nivell d'error
-error_reporting(E_ALL);                     // Mostra tots els errors
-error_reporting(E_ALL & ~E_NOTICE);         // Mostra tots excepte notices
-error_reporting(0);                         // Desactivar tots els errors
+                    <pre><code class="php" id="php-error-levels">&lt;?php
+                        // Configurar nivell d'error
+                        error_reporting(E_ALL);                     // Mostra tots els errors
+                        error_reporting(E_ALL & ~E_NOTICE);         // Mostra tots excepte notices
+                        error_reporting(0);                         // Desactivar tots els errors
 
-// Configuració recomanada per a desenvolupament
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+                        // Configuració recomanada per a desenvolupament
+                        ini_set('display_errors', 1);
+                        ini_set('display_startup_errors', 1);
+                        error_reporting(E_ALL);
 
-// Configuració recomanada per a producció
-ini_set('display_errors', 0);
-ini_set('display_startup_errors', 0);
-error_reporting(E_ALL);
-ini_set('log_errors', 1);
-ini_set('error_log', '/tmp/php-errors.log');
+                        // Configuració recomanada per a producció
+                        ini_set('display_errors', 0);
+                        ini_set('display_startup_errors', 0);
+                        error_reporting(E_ALL);
+                        ini_set('log_errors', 1);
+                        ini_set('error_log', '/tmp/php-errors.log');
 
-// Combinar nivells d'error
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
-error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
-?&gt;</code></pre>
+                        // Combinar nivells d'error
+                        error_reporting(E_ERROR | E_WARNING | E_PARSE);
+                        error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
+                        ?&gt;</code></pre>
             </div>
         `
   },
@@ -204,7 +204,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_DEPRECATED);
                 <pre><code class="php">set_error_handler(callable $error_handler, int $error_types = E_ALL | E_STRICT): mixed</code></pre>
             </div>
             
-            <h4 class="mt-4">🎯 Paràmetres de la funció d'error:</h4>
+            <h4 class="mt-4"> Paràmetres de la funció d'error:</h4>
             <ul class="concept-list">
                 <li><code>$errno</code> - Nivell de l'error</li>
                 <li><code>$errstr</code> - Missatge d'error</li>
@@ -356,6 +356,12 @@ error_reporting($old_level); // Restaurar nivell anterior
 ?&gt;</code></pre>
             </div>
             
+
+        `
+  },
+  {
+title: "4.1 TTTTTTTTTTTTT",
+content: ` 
             <div class="example-block mt-4">
                 <div class="example-title">💡 Exemple pràctic: Sistema de log</div>
                 <pre><code class="php">&lt;?php
@@ -404,7 +410,8 @@ class ErrorLogger {
 $logger = new ErrorLogger('/var/log/myapp_errors.log');
 ?&gt;</code></pre>
             </div>
-        `
+`
+
   },
   {
     title: "5. Die() vs Try...Catch",
@@ -417,7 +424,7 @@ $logger = new ErrorLogger('/var/log/myapp_errors.log');
             
             <div class="row">
                 <div class="col-md-6">
-                    <h4>🚫 Die() i Exit():</h4>
+                    <h4> Die() i Exit():</h4>
                     <div class="code-block">
                         <div class="code-header">
                             <span>us_die.php</span>
@@ -463,7 +470,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 </div>
                 
                 <div class="col-md-6">
-                    <h4>🎯 Try...Catch:</h4>
+                    <h4> Try...Catch:</h4>
                     <div class="code-block">
                         <div class="code-header">
                             <span>us_try_catch.php</span>
@@ -530,7 +537,7 @@ try {
             </div>
             
             <div class="important-note mt-4">
-                <h5>📊 Comparativa:</h5>
+                <h5>Comparativa:</h5>
                 <table class="errors-table">
                     <tr>
                         <th>Característica</th>
@@ -575,7 +582,7 @@ try {
                 <p>A partir de PHP 7, la majoria d'errors es llançuen com a excepcions de la classe <code>Error</code>, que permet un maneig més consistent dels errors.</p>
             </div>
             
-            <h4>🏗️ Jerarquia de classes:</h4>
+            <h4> Jerarquia de classes:</h4>
             <ul class="concept-list">
                 <li><code>Throwable</code> (interface) - Interfície base</li>
                 <li><code>Exception</code> - Excepcions tradicionals</li>
@@ -643,7 +650,7 @@ try {
 ?&gt;</code></pre>
             </div>
             
-            <h4 class="mt-4">🎯 Exemples d'Errors com a Excepcions (PHP 7+):</h4>
+            <h4 class="mt-4"> Exemples d'Errors com a Excepcions (PHP 7+):</h4>
             <div class="code-block">
                 <div class="code-header">
                     <span>errors_com_excepcions.php</span>
@@ -1052,51 +1059,4 @@ ErrorManager::getInstance($env);
   }
 ];
 
-// Variables per controlar la diapositiva actual
-let currentSlideIndex = 0;
-
-// Elements DOM
-let slideContent, prevBtn, nextBtn, currentSlideSpan, totalSlidesSpan;
-
-// Mostrar diapositiva
-function showSlide(index) {
-    currentSlideIndex = index;
-
-    slideContent.innerHTML = slides[index].content;
-    currentSlideSpan.textContent = index + 1;
-
-    prevBtn.disabled = index === 0;
-
-    if (index === slides.length - 1) {
-        nextBtn.textContent = 'Tornar';
-        nextBtn.classList.add('btn-success');
-        nextBtn.classList.remove('btn-outline-primary');
-    } else {
-        nextBtn.textContent = 'Següent';
-        nextBtn.classList.remove('btn-success');
-        nextBtn.classList.add('btn-outline-primary');
-    }
-
-    setTimeout(highlightCodeBlocks, 50);
-}
-
-
-// Inicialitzar
-function init() {
-    slideContent = document.getElementById('slideContent');
-    prevBtn = document.getElementById('prevBtn');
-    nextBtn = document.getElementById('nextBtn');
-    currentSlideSpan = document.getElementById('currentSlide');
-
-    prevBtn.addEventListener('click', onPrevClick);
-    nextBtn.addEventListener('click', onNextClick);
-
-    showSlide(0);
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", init);
-} else {
-  init();
-}
 
