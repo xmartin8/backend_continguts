@@ -67,10 +67,14 @@ body {
 
 /* ===== ESTILS GENERALS PER LES DIAPOSITIVES ===== */
 .slide-container {
-    min-height: 100vh;
-    padding: 1.5rem;
-    background-color: #f8f9fa;
+    min-height: 100vh;                  /* ocupa com a mínim tota l'altura */
+    padding: 1.5rem;                     /* padding general */
+    padding-bottom: 90px;                /* espai extra per al footer fix */
+    background-color: #f8f9fa;           /* fons clar */
+    overflow-y: auto;                     /* scroll si el contingut és alt */
+    max-height: calc(100vh - 70px);      /* evita que el scroll surti del viewport */
 }
+
 
 /* Contingut MÉS AMPLE dins de l'iframe */
 .slide-content {
@@ -395,3 +399,24 @@ body {
 .requadre-impacte {
   font-weight: bold;
 }
+
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 1px solid #dee2e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    z-index: 1000;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+}
+
+/* Indicador de diapositiva al centre */
+.fixed-footer .slide-indicator {
+    font-weight: 500;
+}
+
