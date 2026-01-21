@@ -16,12 +16,12 @@
 }
 
 .ajax-image {
-    max-width: 60%;
+    max-width: 50%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     border: 1px solid #dee2e6;
-    max-height: 400px;
+    max-height: 200px;
     object-fit: contain;
 }
 
