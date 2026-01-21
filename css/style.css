@@ -296,7 +296,8 @@ body {
     }
 }
 
-.poo-navigation {
+/*posem el boto anterior a l'esquerra i el Següent a la dreta*/
+.posBoto-navigation {
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
