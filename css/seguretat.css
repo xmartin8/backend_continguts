@@ -1,15 +1,3 @@
-/* css/seguretat.css - Estils específics per a la pàgina de seguretat */
-
-/* Estils per al contingut de seguretat */
-.security-content {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    padding: 2rem;
-    max-width: 95%;
-    margin: 0 auto;
-}
-
 .security-image-container {
     text-align: center;
     margin: 1rem 0 2rem 0;
@@ -74,9 +62,6 @@
 }
 
 @media (max-width: 768px) {
-    .security-content {
-        padding: 1.5rem;
-    }
     
     .security-image {
         max-width: 90%;

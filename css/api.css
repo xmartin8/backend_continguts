@@ -1,15 +1,3 @@
-/* css/api.css - Estils específics per a la pàgina d'api */
-
-/* Estils per al contingut d'api */
-.api-content {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    padding: 2rem;
-    max-width: 95%;
-    margin: 0 auto;
-}
-
 .api-image-container {
     text-align: center;
     margin: 1rem 0 2rem 0;
@@ -74,9 +62,6 @@
 }
 
 @media (max-width: 768px) {
-    .api-content {
-        padding: 1.5rem;
-    }
     
     .api-image {
         max-width: 90%;
