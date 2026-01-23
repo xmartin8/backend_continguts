@@ -151,10 +151,8 @@ const slides = [
             <div class="code-block">
                 <div class="code-header">
                     <span>pdo_exemple.php</span>
-                    <div>
                         <span class="code-language">PHP</span>
                         <button class="copy-btn ms-2" onclick="copyCode('php-pdo-code', this)">Copiar</button>
-                    </div>
                 </div>
                 <pre><code class="php" id="php-pdo-code">&lt;?php
 try {

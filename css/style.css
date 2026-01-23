@@ -173,10 +173,10 @@ body {
 }
 
 /* Estils per a les accions i contingut */
-.actions-col {
+/*.actions-col {
     flex: 1.5;
     text-align: right;
-}
+}*/
 
 .folder-actions {
     display: flex;
@@ -184,7 +184,7 @@ body {
     gap: 5px;
 }
 
-.folder-info {
+/*.folder-info {
     margin-left: 10px;
 }
 
@@ -198,7 +198,7 @@ body {
     color: #6c757d;
     margin-top: 2px;
 }
-
+*/
 .folder-files {
     font-size: 0.85em;
     color: #0d6efd;
@@ -223,12 +223,13 @@ body {
     background-color: #f8f9fa;
 }
 
+/*
 .file-name {
     flex-grow: 1;
     font-family: 'Consolas', 'Monaco', monospace;
     font-size: 0.95em;
 }
-
+*/
 /* Animació per a les notificacions */
 @keyframes slideIn {
     from {
@@ -250,7 +251,6 @@ body {
     vertical-align: middle;
 }
 
-/* Estils per al navegador de directoris (versió antiga - potser no s'utilitza) */
 .directory-item.empty {
     cursor: default;
     color: #6c757d;
@@ -261,7 +261,7 @@ body {
     background-color: transparent;
 }
 
-/* Millores responsives per a mòbils */
+
 @media (max-width: 768px) {
     .sidebar {
         height: auto;
@@ -275,7 +275,7 @@ body {
     
 }
 
-/*posem el boto anterior a l'esquerra i el Següent a la dreta*/
+/*
 .posBoto-navigation {
     display: flex;
     justify-content: space-between;
@@ -283,10 +283,7 @@ body {
     padding-top: 1rem;
     border-top: 1px solid #dee2e6;
 }
-
-/* ===== ESTILS PER A TEXT MÉS GRAN A TOTES LES PÀGINES ===== */
-
-/* Classe genèrica per a text més gran */
+*/
 .text-large {
     font-size: 1.15rem;
     line-height: 1.7;
@@ -435,4 +432,24 @@ body {
     color: #6c757d;
     font-size: 0.9rem;
     margin-bottom: 0;
+}
+
+.module-card {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #198754;
+    margin-bottom: 1rem;
+}
+
+.module-title {
+    color: #198754;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.module-card p {
+    margin-bottom: 0.5rem;
+    color: #495057;
 }

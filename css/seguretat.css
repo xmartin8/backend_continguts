@@ -39,31 +39,6 @@
     }
 }
 
-/* Estils per als mòduls d'Apache */
-.security-modules {
-    margin-top: 1.5rem;
-}
-
-.module-card {
-    padding: 1rem;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    border-left: 4px solid #198754;
-    margin-bottom: 1rem;
-}
-
-.module-title {
-    color: #198754;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.module-card p {
-    margin-bottom: 0.5rem;
-    color: #495057;
-}
-
 .green-italic-text {
     color: #4caf50; /* Verd més clar */
     font-style: italic;
