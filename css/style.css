@@ -102,6 +102,7 @@ body {
 /* Blocs de codi més amples */
 .code-block {
     margin: 1.5rem 0;
+    background: #0d1117; 
     border-radius: 8px;
     overflow: hidden;
 }
@@ -110,6 +111,7 @@ body {
     margin: 0;
     padding: 0;
     border-radius: 8px;
+    background: transparent;
 }
 
 .code-block code {
@@ -259,25 +261,6 @@ body {
     background-color: transparent;
 }
 
-/* Estil per a l'enllaç d'exemple (versió antiga) */
-.example-link {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #f8f9fa;
-    border: 2px dashed #0d6efd;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
-}
-
-.example-link:hover {
-    background-color: #e9ecef;
-    border-style: solid;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
 /* Millores responsives per a mòbils */
 @media (max-width: 768px) {
     .sidebar {
@@ -290,14 +273,6 @@ body {
         height: 60vh;
     }
     
-    .slide-content {
-        padding: 1rem;
-        margin: 0.5rem;
-    }
-    
-    .slide-title {
-        font-size: 1.5rem;
-    }
 }
 
 /*posem el boto anterior a l'esquerra i el Següent a la dreta*/
@@ -420,3 +395,44 @@ body {
     font-weight: 500;
 }
 
+
+.generic-info {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #0d6efd;
+}
+
+.generic-topics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.generic-topic {
+    padding: 1rem;
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.generic-topic:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-color: #0d6efd;
+}
+
+.generic-topic h4 {
+    color: #495057;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.generic-topic p {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}

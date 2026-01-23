@@ -200,16 +200,6 @@
     opacity: 0.8;
 }
 
-.loading-spinner {
-    text-align: center;
-    padding: 40px;
-}
-
-.loading-spinner p {
-    margin-top: 10px;
-    color: #6c757d;
-}
-
 /* Estil per a l'enllaç d'exemple (versió POO) */
 .example-link {
     display: inline-flex;
@@ -241,29 +231,3 @@
     margin-top: 0.5rem;
     font-size: 1rem;
 }
-
-.poo-alert-info {
-    background-color: #d1ecf1;
-    border-left: 4px solid #0dcaf0;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 5px;
-}
-
-.finish-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.code-block {
-  background: #0d1117; 
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.code-block pre {
-  margin: 0;
-  background: transparent;
-}
-

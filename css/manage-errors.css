@@ -13,47 +13,6 @@
     object-fit: contain;
 }
 
-.errors-info {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    border-left: 4px solid #0d6efd;
-}
-
-.errors-topics {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.errors-topic {
-    padding: 1rem;
-    background: white;
-    border: 1px solid #e9ecef;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-}
-
-.errors-topic:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-color: #0d6efd;
-}
-
-.errors-topic h4 {
-    color: #495057;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-}
-
-.errors-topic p {
-    color: #6c757d;
-    font-size: 0.9rem;
-    margin-bottom: 0;
-}
-
 /* Estils per a la taula de tipus d'errors */
 .errors-table {
     width: 100%;
@@ -151,15 +110,6 @@
     color: #495057;
 }
 
-/* Estils per a notes importants */
-.important-note {
-    background-color: #fff3cd;
-    border-left: 4px solid #ffc107;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 5px;
-}
-
 .important-note h5 {
     color: #856404;
     margin-bottom: 0.5rem;
@@ -180,45 +130,3 @@
     margin-bottom: 0.5rem;
 }
 
-/* Botó de copiar codi */
-.copy-btn {
-    background-color: transparent;
-    border: 1px solid #75715e;
-    color: #f8f8f2;
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.copy-btn:hover {
-    background-color: #49483e;
-}
-
-.copy-btn.copied {
-    background-color: #50fa7b;
-    color: #282a36;
-    border-color: #50fa7b;
-}
-
-/* Barra de títol del codi */
-.code-header {
-    background-color: #272822;
-    color: #f8f8f2;
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-}
-
-.code-language {
-    background-color: #49483e;
-    padding: 0.2rem 0.5rem;
-    border-radius: 3px;
-    font-size: 0.8rem;
-}
