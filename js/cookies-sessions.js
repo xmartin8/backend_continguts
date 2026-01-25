@@ -75,8 +75,8 @@ const slides = [
     content: `<h2 class="slide-title">6. Seguretat en Sessions</h2><p>Contingut en desenvolupament...</p>`
   },
   {
-    title: "7. Cookies i GDPR",
-    content: `<h2 class="slide-title">7. Cookies i GDPR</h2><p>Contingut en desenvolupament...</p>`
+    title: "7. Cookies",
+    content: `<h2 class="slide-title">7. Cookies</h2><p>Contingut en desenvolupament...</p>`
   },
   {
     title: "8. Almacenament Alternatiu",

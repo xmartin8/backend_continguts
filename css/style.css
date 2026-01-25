@@ -20,6 +20,7 @@ body {
     margin-bottom: 1.5rem !important;
 }
 
+
 /* Elements del sidebar més compactes */
 .nav-link {
     color: #495057;
@@ -40,6 +41,18 @@ body {
     cursor: not-allowed;
     opacity: 0.6;
 }
+
+.nav-link.active-topic {
+    background-color: #12700b;
+    color: white !important;
+    font-weight: bold;
+}
+
+.nav-link.active-topic:hover {
+    background-color: #219b0c; /* el blau actiu no canvia al hover */
+    color: white !important;
+}
+
 
 /* Iframe ocupa tot l'espai disponible */
 .content-frame {

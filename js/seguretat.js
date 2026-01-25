@@ -151,8 +151,8 @@ const slides = [
             <div class="code-block">
                 <div class="code-header">
                     <span>pdo_exemple.php</span>
-                        <span class="code-language">PHP</span>
-                        <button class="copy-btn ms-2" onclick="copyCode('php-pdo-code', this)">Copiar</button>
+                    <span class="code-language">PHP</span>
+                    <button class="copy-btn ms-2" onclick="copyCode('php-pdo-code', this)">Copiar</button>
                 </div>
                 <pre><code class="php" id="php-pdo-code">&lt;?php
 try {
@@ -329,7 +329,7 @@ if (preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $date)
                 </ul>
             </div>
             
-            <h4>📦 1. Instal·lar paquets d'Apache</h4>
+            <h4>1. Instal·lar paquets d'Apache</h4>
             <p>Assegurar-se que tenim instal·lat el paquet d'Apache en el sistema. Si no ho tens, pots instal·lar-lo:</p>
             
             <div class="code-block">
@@ -360,7 +360,7 @@ sudo systemctl start httpd
 sudo systemctl enable httpd</code></pre>
             </div>
             
-            <h4 class="mt-4">🔧 2. Activar els mòduls necessaris</h4>
+            <h4 class="mt-4">2. Activar els mòduls necessaris</h4>
             <p>Activar els mòduls <code>mod_authz_host</code> i <code>mod_authn_core</code> en la configuració d'Apache:</p>
             
             <div class="code-block">
@@ -376,7 +376,7 @@ LoadModule authn_core_module modules/mod_authn_core.so
 # sudo a2enmod authn_core</code></pre>
             </div>
             
-            <h4 class="mt-4">🔄 3. Reiniciar el servidor Apache</h4>
+            <h4 class="mt-4">3. Reiniciar el servidor Apache</h4>
             <div class="code-block">
                 <div class="code-header">
                     <span>Reiniciar el servei</span>
@@ -394,7 +394,7 @@ httpd -M | grep -E "authz_host|authn_core"</code></pre>
             </div>
             
             <div class="important-note mt-4">
-                <h5>✅ Verificació dels mòduls</h5>
+                <h5>Verificació dels mòduls</h5>
                 <p>Després de reiniciar, verifica que els mòduls estan carregats correctament:</p>
                 <ul class="concept-list">
                     <li><code>authz_host_module</code> - Permet control d'accés per IP/hostname</li>

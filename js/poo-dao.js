@@ -167,9 +167,7 @@ const slides = [
           <span class="code-language">PHP</span>
           <button class="copy-btn ms-2" onclick="copyCode('php-pdo-code', this)">Copiar</button>
         </div>
-</div>
-        <pre>
-          <code class="php" id="php-pdo-code">&lt;?php
+<pre><code class="php" id="php-pdo-code">&lt;?php
 trait Logger {
     public function log($message) {
         echo "Log: $message\n";
@@ -184,9 +182,7 @@ class User {
         // Altres operacions
     }
 }
-?&gt;
-          </code>
-        </pre>
+?&gt;</code></pre>
       </div>
     `
     },
