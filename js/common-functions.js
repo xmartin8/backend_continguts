@@ -131,6 +131,13 @@ if (document.readyState === "loading") {
   init();
 }
 
+// Actualitzar el comptador total de diapositives
+document.addEventListener('DOMContentLoaded', () => {
+  const totalSlidesSpan = document.getElementById('totalSlides');
+  if (totalSlidesSpan) {
+    totalSlidesSpan.textContent = slides.length;
+  }
+});
 
 // =============================================
 // EXPORTAR FUNCIONS AL GLOBAL SCOPE
