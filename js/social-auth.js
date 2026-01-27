@@ -386,13 +386,332 @@ $hybridauth = new Hybrid_Auth($config);</code></pre>
                 <p>HybridAuth autoritza l'aplicació per accedir a les dades bàsiques de l'usuari i redirecciona a l'aplicació web amb una autenticació correcta.</p>
                 
                 <div class="important-note mt-4">
-                    <strong>✅ Confirmació:</strong> Una vegada s'ha autoritzat l'aplicació, aquesta apareixerà a l'apartat de "Aplicacions connectades" al compte del proveïdor utilitzat.
+                 
                 </div>
             </div>
         `
   },
-  // Nou slide 8: Reflexió i gestió de contrasenyes
+
+{
+    title: "OAuth2 (Open Authoritzation)",
+    content: `
+            <h2 class="slide-title">8. OAuth2: Com actuen les xarxes socials</h2>
+            <div class="text-large">
+                <p class="lead mb-4"><em>Com actuen les xarxes socials quan es vol fer una autenticació a través d'elles?</em></p>
+                
+                <!-- Imatges amb fletxa al centre -->
+                <div class="social-auth-images mt-4 mb-4">
+                    <div class="social-auth-image-container text-center">
+                        <img src="../img/oauth-4.png" alt="OAuth 1.0" class="social-auth-image" />
+                    </div>
+                    
+                    <div class="d-flex align-items-center justify-content-center" style="flex: 0 0 auto; padding: 0 20px;">
+                        <div class="requadre-arrow" style="font-size: 3rem; color: #0d6efd; font-weight: bold;">
+                            →
+                        </div>
+                    </div>
+                    
+                    <div class="social-auth-image-container text-center">
+                        <img src="../img/oauth-3.png" alt="OAuth 2.0" class="social-auth-image" />
+                    </div>
+                </div>
+                
+                <div class="module-card mt-4">
+                    <div class="module-title">Per implementar autenticació amb Google seguim aquests passos:</div>
+                </div>
+
+                <div class="mt-4">
+                    <h4>1. Fer servir la llibreria "google-api-php-client"</h4>
+                    <div class="code-block mt-3">
+                        <div class="code-header">
+                            <span class="code-language">PHP</span>
+                            <button class="copy-btn" onclick="copyCode('oauth-google1', this)">Copiar</button>
+                        </div>
+                        <pre><code id="oauth-google1">// Instal·lar via Composer
+composer require google/apiclient:"^2.0"
+
+// Incloure l'autoloader
+require_once 'vendor/autoload.php';</code></pre>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <h4>2. Registrar l'aplicació en el portal de desenvolupadors de Google</h4>
+                    <ol class="concept-list">
+                        <li>Accedir a <a href="https://console.developers.google.com" target="_blank">Google Cloud Console</a></li>
+                        <li>Crear un nou projecte o seleccionar-ne un existent</li>
+                        <li>Habilitar l'API de Google Sign-In</li>
+                        <li>Configurar la pantalla de consentiment OAuth</li>
+                        <li>Crear credencials OAuth 2.0 Client ID</li>
+                        <li>Afegir URL d'autorització i redirecció</li>
+                    </ol>
+                </div>
+                
+                <div class="mt-4">
+                    <h4>3. Configuració de credencials:</h4>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="generic-topic h-100">
+                                <h4>Client ID</h4>
+                                <p>Identificador únic de la teva aplicació</p>
+                                <code class="small">xxxxxxxxxx-xxxxxxxxxxxxxxxx.apps.googleusercontent.com</code>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="generic-topic h-100">
+                                <h4>Client Secret</h4>
+                                <p>Clau secreta per a l'autenticació</p>
+                                <code class="small">GOCSPX-xxxxxxxxxxxxxxxxxxxx</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <h4>4. Configuració bàsica del client:</h4>
+                    <div class="code-block mt-3">
+                        <div class="code-header">
+                            <span class="code-language">PHP</span>
+                            <button class="copy-btn" onclick="copyCode('oauth-google2', this)">Copiar</button>
+                        </div>
+                        <pre><code id="oauth-google2">$client = new Google_Client();
+$client->setClientId('EL_TEU_CLIENT_ID');
+$client->setClientSecret('EL_TEU_CLIENT_SECRET');
+$client->setRedirectUri('https://el-teu-domini.com/callback.php');
+$client->addScope('email');
+$client->addScope('profile');</code></pre>
+                    </div>
+                </div>
+            </div>
+        `
+},
+{
+    title: "Gestió d'Aplicacions Connectades",
+    content: `
+            <h2 class="slide-title">9. HybridAuth: Com actuen les xarxes socials</h2>
+            <div class="text-large">
+
+                <!-- Imatges amb fletxa al centre -->
+                <div class="social-auth-images mt-4 mb-4">
+                    <div class="social-auth-image-container text-center">
+                        <img src="../img/oauth-4.png" alt="OAuth 1.0" class="social-auth-image" />
+                    </div>
+                    
+                    <div class="d-flex align-items-center justify-content-center" style="flex: 0 0 auto; padding: 0 20px;">
+                        <div class="requadre-arrow" style="font-size: 3rem; color: #0d6efd; font-weight: bold;">
+                            →
+                        </div>
+                    </div>
+                    
+                    <div class="social-auth-image-container text-center">
+                        <img src="../img/oauth-3.png" alt="OAuth 2.0" class="social-auth-image" />
+                    </div>
+                </div>
+                
+                <h4 class="mt-4">🔍 Anàlisi del flux complet:</h4>
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="generic-topic h-100">
+                            <h4>📝 Autorització</h4>
+                            <p><strong>Imatge 1:</strong> L'usuau veu la pantalla d'autorització de Twitter on se li demana permís per a que l'aplicació "Social Authentication 1" accedeixi al seu compte.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="generic-topic h-100">
+                            <h4>✅ Confirmació</h4>
+                            <p><strong>Imatge 2:</strong> Un cop autoritzada, l'aplicació apareix a "Connected apps" on l'usuari pot veure quina informació té accés i revocar-lo si ho desitja.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="generic-topic h-100">
+                            <h4>⚙️ Gestió</h4>
+                            <p>L'usuari manté el control total sobre les aplicacions connectades i pot gestionar els permisos en qualsevol moment des del seu compte de Twitter.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="requadre mt-4">
+                    <h4>🤔 Reflexió important:</h4>
+                    <p class="requadre-impacte">Com hem de procedir amb el nostre web si un usuari que s'ha autenticat sempre mitjançant autenticació social vol recuperar la contrasenya?</p>
+                </div>
+                
+                <h4 class="mt-4">🔐 Solucions possibles:</h4>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="generic-topic h-100">
+                            <h4>🔗 Mètode alternatiu</h4>
+                            <p><strong>Permetre afegir email/contrasenya:</strong><br>Quan un usuari es registra via social, oferir-li l'opció d'afegir un mètode d'autenticació alternatiu (email + contrasenya).</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="generic-topic h-100">
+                            <h4>🔁 Vinculació de comptes</h4>
+                            <p><strong>Sistema de múltiples proveïdors:</strong><br>Permetre als usuaris vincular múltiples comptes socials (Google, Facebook, Twitter) al mateix compte a la teva aplicació.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="generic-topic h-100">
+                            <h4>📧 Recuperació via email</h4>
+                            <p><strong>Enllaç màgic:</strong><br>Enviar un enllaç únic al correu electrònic associat amb el compte social per restablir l'accés.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="generic-topic h-100">
+                            <h4>📱 Verificació en dos passos</h4>
+                            <p><strong>Seguretat addicional:</strong><br>Implementar verificació en dos passos per als comptes vinculats amb autenticació social.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="important-note mt-4">
+                    <strong>💡 Millor pràctica:</strong> Dissenyar el sistema per suportar autenticació híbrida des del principi. Permetre als usuaris vincular múltiples mètodes d'autenticació i gestionar-los des del seu perfil d'usuari. Informar clarament que l'autenticació social no utilitza contrasenyes del teu sistema.
+                </div>
+            </div>
+        `
+},
   {
+    title: "Github amb HybridAuth",
+    content: `
+            <h2 class="slide-title">10. Exemple Github amb HybridAuth</h2>
+            <div class="text-large">
+                <div class="code-block mt-3">
+                    <div class="code-header">
+          <span>app/controller/oauth/github.php</span>
+          <span class="code-language">PHP</span>
+          <button class="copy-btn ms-2" onclick="copyCode('php-pdo-code', this)">Copiar</button>
+                    </div>
+                    <pre><code id="code5"><?php
+
+if (session_status() == PHP_SESSION_NONE) { 
+    session_start(); 
+}
+if (isset($_SESSION['userId'])) {
+    header('Location: login.php');
+    return;
+}
+
+
+
+// Configuració pel nostre provider
+
+var_dump($_SERVER['HTTP_HOST']);
+var_dump(dirname($_SERVER['PHP_SELF']));
+
+$config = [
+    'callback' => 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/oauth/github.php', //ruta dinàmica per al callback
+    'keys' => [
+        'id' => 'Iv23liMag0QY2GVm9oiM', 
+        'secret' => '69c2007827e514bf85dbd18e913ece49afa950f4',
+    ]
+];
+echo 'Callback URL: ' . $config['callback'];
+
+try {
+    $github = new Hybridauth\Provider\GitHub($config);
+
+    // Demanem a l'usuari que s'autentiqui amb GitHub
+    $github->authenticate();
+
+    // Obtenim el token d'accés
+    $accessToken = $github->getAccessToken();
+
+    $userProfile = $github->getUserProfile(); // obtenim l'user profile, que conté diversa informació de l'usuari
+    $displayName = $userProfile->displayName; // obtenim el nickname
+    $email = $userProfile->email; // i el correu
+
+    // Registrem l'usuari si no ho està i el loguem
+    loginSocialProviderUser($email, $displayName, "GitHub");
+
+    // Tanquem el popup i actualitzem la finestra mare
+    closeWindowAndReloadParent();
+} catch (\Exception $e) {
+    echo $e->getMessage();
+}</code></pre>
+                </div>
+            </div>
+        `
+  },
+
+   {
+    title: "Google amb OAuth2.0",
+    content: `
+            <h2 class="slide-title">11. Exemple Google amb OAuth2.0</h2>
+            <div class="text-large">
+                <div class="code-block mt-3">
+                    <div class="code-header">
+          <span>app/controller/oauth/google.php</span>
+          <span class="code-language">PHP</span>
+          <button class="copy-btn ms-2" onclick="copyCode('php-pdo-code', this)">Copiar</button>
+                    </div>
+                    <pre><code id="code5"><?php
+
+if (session_status() == PHP_SESSION_NONE) { 
+    session_start(); 
+}
+
+require_once "../model/pdo-users.php";
+require_once "../controller/session.php";
+require_once "../controller/social-auth-common.php";
+require_once '../vendor/autoload.php'; 
+
+if (isset($_SESSION['userId'])) {
+    header('Location: login.php');
+    return;
+}
+
+	$clientID = 'XXXXXXXXXXX-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com';
+	$clientSecret = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
+	$redirectUri = 'http://localhost/Practiques/.......................';
+
+	/***
+	 * 	// create Client Request to access Google API
+	$client = new Google_Client();
+	$client->setClientId($clientID);
+	$client->setClientSecret($clientSecret);
+	$client->setRedirectUri($redirectUri);
+	$client->addScope("email");
+	$client->addScope("profile");
+	 * 
+	 */
+
+	$client = new Google_Client();
+	$client->setClientId('CLIENT_ID');
+	$client->setClientSecret('CLIENT_SECRET');
+	$client->setRedirectUri('http://localhost/Practiques/nba-branch8/controller/oauth/google.php');
+	$client->addScope("email");
+	$client->addScope("profile");
+
+	// authenticate code from Google OAuth Flow
+	
+	if (isset($_GET['code'])) {
+		$token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
+		$client->setAccessToken($token['access_token']);
+
+		// get profile info
+		$google_oauth = new Google_Service_Oauth2($client);
+		$google_account_info = $google_oauth->userinfo->get();
+		$email =  $google_account_info->email;
+		$name =  $google_account_info->name;
+
+		$_SESSION['usuari'] = [
+			"name" => $name,
+			"email" => $email,
+			"accessType" => "Google"
+		];
+		header('Location: contingut.php');
+		die();
+	}
+
+
+    ?></code></pre>
+                </div>
+            </div>
+        `
+  },
+    {
     title: "Reflexió: Gestió de contrasenyes amb autenticació social",
     content: `
             <h2 class="slide-title">🤔 Reflexió: Gestió de contrasenyes</h2>

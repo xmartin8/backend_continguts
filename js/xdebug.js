@@ -203,9 +203,9 @@ xdebug.collect_return=1
       "request": "launch",
       "port": 9003,
       "pathMappings": {
-        "C:/xampp/htdocs/mi_proyecto": "/ruta/local/mi_proyecto",
-        "/opt/lampp/htdocs/mi_proyecto": "/ruta/local/mi_proyecto",
-        "/var/www/html/mi_proyecto": "/ruta/local/mi_proyecto"
+        "C:/xampp/htdocs/meu_projecte": "/ruta/local/meu_projecte",
+        "/opt/lampp/htdocs/meu_projecte": "/ruta/local/meu_projecte",
+        "/var/www/html/meu_projecte": "/ruta/local/meu_projecte"
       },
       "ignore": [
         "**/vendor/**/*.php"

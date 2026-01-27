@@ -102,6 +102,7 @@ const errorsTypesSlides = [
   {
     title: "2.1. Configuració de Nivells",
     content: `
+    <h2 class="slide-title">2.1 Configuració de Nivells</h2>
       <div class="code-block mt-4">
         <div class="code-header">
           <span>configuracio_nivells.php</span>
