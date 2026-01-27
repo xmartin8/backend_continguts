@@ -1,10 +1,10 @@
 .security-image-container {
-    text-align: center;
+    text-align: right;
     margin: 1rem 0 2rem 0;
 }
 
 .security-image {
-    max-width: 50%;
+    max-width: 30%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
