@@ -455,6 +455,15 @@ body {
     margin-bottom: 1rem;
 }
 
+.module-card-orange {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #e46a0c;
+    margin-bottom: 1rem;
+}
+
+
 .module-title {
     color: #198754;
     font-size: 1.2rem;
@@ -462,6 +471,12 @@ body {
     font-weight: 600;
 }
 
+.module-title-orange {
+    color: #e46a0c;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
 .module-card p {
     margin-bottom: 0.5rem;
     color: #495057;

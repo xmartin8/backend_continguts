@@ -3,6 +3,6 @@ const slides = [
   ...seguretatVersionsSlides,
   ...seguretatPdoSlides,
   ...seguretatMvcSlides,
-  ...seguretatConfigSlides,
+  ...seguretatHtaccesSlides,
   ...seguretatAttacksSlides
 ];

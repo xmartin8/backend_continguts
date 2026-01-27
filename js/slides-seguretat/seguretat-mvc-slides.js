@@ -34,53 +34,12 @@ const seguretatMvcSlides = [
           <p lead><strong>Solució:</strong> "Capar les peticions que no vinguin directament d'Apache.</p>
           <p lead>De manera que les peticions pròpies de la nostra IP (les peticions que es generen automàticament) s'hi permeti accés, mentre que si algú veu referenciat un arxiu que no és dins de públic i intenta accedir-hi, com que la IP serà diferent de la d'Apache, doncs denegar la petició".</p>
         </div>
+        <p class="graphically-text lead"><strong>I com ho aconseguim això.....?</strong></p>
         
-        <p class="graphically-text lead"><strong>Gràficament...</strong></p>
       </div>
-    `,
+    `
   },
-  {
-    title: "5. Diagrama de protecció",
-    content: `
-      <h2 class="slide-title text-center">5. Diagrama de protecció</h2>
-      <div class="text-center mt-4">
-        <pre class="bg-light p-3 rounded text-start d-inline-block" style="max-width: 800px;">
-🌐 INTERNET        (Atacants / usuaris externs)
-        │
-        ────────────┼────────────
-        │  Petició HTTP
-        ▼
-┌─────────────────────────┐
-│         APACHE          │
-│     (Servidor web)      │
-└───────────┬─────────────┘
-        │
-┌───────────┴───────────┐
-│                       │
-▼                       ▼
-┌────────────────┐      ┌────────────────────┐
-│ FITXERS PÚBLICS│      │ FITXERS NO PÚBLICS │
-│ (public)       │      │ (app, config…)     │
-└───────┬────────┘      └─────────┬──────────┘
-        │                         │
-        │                         ▼
-        │              ┌──────────────────┐
-        │              │ Comprovar IP     │
-        │              └────────┬─────────┘
-        │                       │
-        ┌──────────────┴──────────────┐
-        │                             │
-        ▼                             ▼
-   ✅ ACCÉS   IP = Apache              IP externa
-   PERMÈS    (127.0.0.1)              (atacant)
-        │                             │
-        ▼                             ▼
-  ✅ ACCÉS INTERN              ❌ DENEGAT
-                                     (403 Forbidden)</pre>
-      </div>
-    `,
-  },
-  {
+      {
     title: "5. Cal pujar tots els fitxers del vostre MVC?",
     content: `
       <h2 class="slide-title">5. Cal pujar tots els fitxers del vostre MVC?</h2>
@@ -88,16 +47,16 @@ const seguretatMvcSlides = [
         <p>Instal·lant i configurant els següents mòduls d'Apache:</p>
         
         <div class="security-modules">
-          <div class="module-card">
-            <h4 class="module-title">mod_authz_host</h4>
+          <div class="module-card-orange">
+            <h4 class="module-title-orange">mod_authz_host</h4>
             <p>Les autoritzacions implementades per <code>mod_authz_host</code> s'enregistren fent servir la directiva <code>Require</code>.</p>
             <p>La directiva que volem configurar es pot realitzar a les seccions <code>&lt;Directory&gt;</code>, <code>&lt;Files&gt;</code>, <code>&lt;Location&gt;</code> o també al fitxer <code>.htaccess</code>. Ambdós casos per a controlar l'accés a parts en concret del servidor. L'accés pot ser controlat basant-nos en el hostname del client o en la IP.</p>
           </div>
           
           <hr class="my-4">
           
-          <div class="module-card">
-            <h4 class="module-title">mod_authn_core</h4>
+          <div class="module-card-orange">
+            <h4 class="module-title-orange">mod_authn_core</h4>
             <p>Aquest mòdul prové de la capacitat de permetre o denegar l'accés a parts del nostre lloc web.</p>
           </div>
         </div>
@@ -106,8 +65,9 @@ const seguretatMvcSlides = [
           <p><a href="https://httpd.apache.org/docs/trunk/es/mod/mod_authz_host.html" target="_blank">https://httpd.apache.org/docs/trunk/es/mod/mod_authz_host.html</a></p>
           <p><a href="https://httpd.apache.org/docs/trunk/es/mod/mod_authn_core.html" target="_blank">https://httpd.apache.org/docs/trunk/es/mod/mod_authn_core.html</a></p>
         </div>
+        
       </div>
-    `,
+    `
   },
   {
     title: "5.1 Configurar els mòduls d'Apache",
@@ -194,7 +154,51 @@ httpd -M | grep -E "authz_host|authn_core"</code></pre>
             <li><code>authn_core_module</code> - Proporciona funcionalitats bàsiques d'autenticació</li>
           </ul>
         </div>
+        <p class="graphically-text lead"><strong>Gràficament...</strong></p>
       </div>
     `
+  },
+
+  {
+    title: "5.2 Diagrama de protecció",
+    content: `
+      <h2 class="slide-title text-center">5.2 Diagrama de protecció</h2>
+      <div class="text-center mt-4">
+        <pre class="bg-light p-3 rounded text-start d-inline-block" style="max-width: 800px;">
+🌐 INTERNET        (Atacants / usuaris externs)
+        │
+        ────────────┼────────────
+        │  Petició HTTP
+        ▼
+┌─────────────────────────┐
+│         APACHE          │
+│     (Servidor web)      │
+└───────────┬─────────────┘
+        │
+┌───────────┴───────────┐
+│                       │
+▼                       ▼
+┌────────────────┐      ┌────────────────────┐
+│ FITXERS PÚBLICS│      │ FITXERS NO PÚBLICS │
+│ (public)       │      │ (app, config…)     │
+└───────┬────────┘      └─────────┬──────────┘
+        │                         │
+        │                         ▼
+        │              ┌──────────────────┐
+        │              │ Comprovar IP     │
+        │              └────────┬─────────┘
+        │                       │
+        ┌──────────────┴──────────────┐
+        │                             │
+        ▼                             ▼
+   ✅ ACCÉS   IP = Apache              IP externa
+   PERMÈS    (127.0.0.1)              (atacant)
+        │                             │
+        ▼                             ▼
+  ✅ ACCÉS INTERN              ❌ DENEGAT
+                                     (403 Forbidden)</pre>
+      </div>
+    
+      `
   }
 ];

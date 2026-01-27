@@ -73,3 +73,24 @@
     text-align: center;
     font-size: 1.1em;
 }
+
+      .htaccess-item {
+        margin-bottom: 15px;
+        padding: 8px;
+        background: rgba(0, 102, 204, 0.05);
+        border-left: 3px solid #0066cc;
+        border-radius: 4px;
+      }
+      .htaccess-symbol {
+        font-weight: bold;
+        color: #0066cc;
+        font-size: 1.1em;
+        font-family: 'Courier New', monospace;
+        margin-right: 10px;
+        display: inline-block;
+        min-width: 50px;
+      }
+      .htaccess-desc {
+        font-style: italic;
+        color: #333;
+      }
