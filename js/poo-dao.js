@@ -159,8 +159,7 @@ const slides = [
                 <p>Fem servir <strong>Traits</strong> que permeten afegir funcionalitats entre diferents classes sense fer servir herència.</p>
                 <p>Una <strong>Trait no és una classe</strong> però és compatible amb l'herència!</p>
             </div>
-        
-      <h2 class="slide-title">Exemple de Trait</h2>
+    
       <div class="code-block">
         <div class="code-header">
           <span>trait-example.php</span>

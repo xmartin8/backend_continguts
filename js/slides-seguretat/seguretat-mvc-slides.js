@@ -1,31 +1,22 @@
 // Diapositives sobre protecció de fitxers MVC
 const seguretatMvcSlides = [
-  {
-    title: "5. Cal pujar tots els fitxers del MVC?",
-    content: `
-      <h2 class="slide-title">5. Cal pujar tots els fitxers del vostre MVC?</h2>
-      
-      <div class="row align-items-center text-xxl">
-        <div class="col-md-6">
-          <div class="security-text-large">
-            <p class="lead">Frameworks de PHP com Laravel tenen una estructura de fitxers MVC, per tant una estructura de fitxers gran.</p>
-            <p class="lead">Per exemple, amb Laravel se'ns genera una estructura de fitxers semblant a aquesta:</p>
-          </div>
-        </div>
-        
-        <div class="col-md-6">
-          <div class="security-image-container">
-            <img src="../img/estructuraLaravel.png" alt="Estructura Laravel" class="security-image img-fluid rounded shadow" />
-          </div>
+{
+  title: "5. Cal pujar tots els fitxers del MVC?",
+  content: `
+    <h2 class="slide-title">5. Cal pujar tots els fitxers del vostre MVC?</h2>
+    <div class="row text-xxl" style="height: calc(100vh - 180px);">
+      <div class="col-6 d-flex align-items-center">
+        <div class="security-text-large">
+          <p class="lead">Frameworks de PHP com Laravel tenen una estructura de fitxers MVC, per tant una estructura de fitxers gran.</p>
+          <p class="lead">Per exemple, amb Laravel se'ns genera una estructura de fitxers semblant a aquesta:</p>
         </div>
       </div>
-      
-      <div class="important-note mt-4 text-xxl">
-        <h5>Reflexió:</h5>
-        <p>És necessari "penjar" tots els fitxers de la nostra estructura al nostre servidor web o només caldria penjar la nostra carpeta pública?</p>
+      <div class="col-6 d-flex align-items-center justify-content-center">
+        <img src="../img/estructuraLaravel.png" alt="Estructura Laravel" class="img-fluid rounded shadow" style="max-height: 90%; width: auto; max-width: 100%;" />
       </div>
-    `,
-  },
+    </div>
+  `
+},
   {
     title: "5. Solució",
     content: `
