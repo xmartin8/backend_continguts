@@ -1,9 +1,9 @@
 // Diapositives de mètodes HTTP
-const apiMethodsSlides = [
+const apiPutPatchSlides = [
   {
     title: "PUT vs PATCH",
     content: `
-      <h3 class="slide-title">PUT vs PATCH</h3>
+      <h3 class="slide-title">2. PUT vs PATCH</h3>
       
       <div class="row mb-4">
         <div class="col-md-6">
