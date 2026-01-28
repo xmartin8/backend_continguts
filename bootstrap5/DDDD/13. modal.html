@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Modal</title>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row mt-5">
+			<div class="col">
+				<!-- amb "data-bs-toggle="modal"" li diem a bootstrap que obri una finestra emergent 
+				i per a indicar quian serà la finestra emergent farem "data-bs-target="#elmeu-modal-1""-->
+				
+				<button 
+					class="btn btn-primary btn-lg"					
+					data-bs-toggle="modal"
+					data-bs-target="#elmeu-modal-1"
+				>
+					Obrir Modal 1
+				</button>
+				<!-- aquest primer div vindria a ser el fons fosc de quan apareix la nostra finestra emergent -->
+				<!-- modal fade farà una transició, l'id correspon amb el de dalt, tabindex és una propietat requerida pels modals i els aria per discapacitat -->			
+				<div				
+					class="modal fade"
+					id="elmeu-modal-1"
+					tabindex="-1"
+					aria-hidden="true"
+					aria-labelledby="label-modal-1"
+				>
+					<!-- caixa de diàleg >> que provin d'executar un a un cadascú dels següents divs aniuats-->
+					<div class="modal-dialog">
+						<!-- Contingut de la caixa -->
+						<div class="modal-content">
+							<!-- Encapçalat de la caixa -->
+							<div class="modal-header">
+								<h5 class="modal-title">Títol del modal</h5>
+								<button class="btn-close" data-bs-dismiss="modal" aria-label="Tancar"></button>
+							</div>
+
+							<!-- Cos de la caixa -->
+							<div class="modal-body">
+								<h1>Hola Mon</h1>
+							</div>
+
+							<!-- Peu de pagina de la caixa -->
+							<div class="modal-footer">
+								<button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel·lar</button>
+								<button type="button" class="btn btn-primary">Accepto</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- colapsem la columna anterior afegint aquesta nova -->
+			<div class="col">
+				
+				<button 
+					class="btn btn-primary btn-lg"
+					data-bs-toggle="modal"
+					data-bs-target="#elmeu-modal-2"
+				>
+					Obrir Modal 2
+				</button>
+					<!-- amb "data-bs-backdrop="static"" evitem que puguin tancar el dialeg pulsant a qualsevol lloc del web -->
+				<div
+					class="modal fade"
+					id="elmeu-modal-2"
+					tabindex="-1"
+					aria-hidden="true"
+					aria-labelledby="label-modal-2"
+					data-bs-backdrop="static"
+				>
+					<!-- caixa de diàleg -->
+					<!-- per a centrar un modal de forma vertical farem  modal-dialog-centered-->
+					<!-- si el contingut te molt text, podem fer "modal-dialog-scrollable" -->						
+					<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+						<!-- Contingut de la caixa -->
+						<div class="modal-content">
+							<!-- Encapçalat de la caixa -->							
+							<div class="modal-header">
+								<h5 class="modal-title">Títol del modal</h5>
+								<button class="btn-close" data-bs-dismiss="modal" aria-label="Tancar"></button>
+							</div>
+
+							<!-- Cos de la caixa -->
+							<div class="modal-body">		
+								<!-- posem 1000px per a forçar a que aparegui l'scroll -->
+								<div style="height: 1000px;">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe velit rerum, itaque eaque explicabo assumenda aut soluta recusandae quam nesciunt aperiam, eius sed temporibus suscipit aspernatur. Laboriosam illum harum voluptatem?
+								</div>
+							</div>
+
+							<!-- Peu de pagina de la caixa -->
+							<div class="modal-footer">
+								<button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel·lar</button>
+								<button type="button" class="btn btn-primary">Accepto</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

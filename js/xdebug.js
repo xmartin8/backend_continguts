@@ -152,8 +152,8 @@ xdebug.collect_return=1
         <h4>a) Instal·lar l'extensió PHP Debug</h4>
         <p>A VSCode, busca i instal·la l'extensió <strong>"PHP Debug"</strong> de Felix Becker.</p>
         
-        <div class="text-center my-4 p-3 bg-light rounded border">
-          <h5 class="text-primary">💡 Com trobar l'extensió:</h5>
+        <div class="my-4 p-3 bg-light rounded border">
+          <h5 class="text-primary">Com trobar l'extensió:</h5>
           <ol class="text-start">
             <li>Obre VSCode</li>
             <li>Prem <kbd>Ctrl+Shift+X</kbd> (o clica a l'icona d'extensions)</li>

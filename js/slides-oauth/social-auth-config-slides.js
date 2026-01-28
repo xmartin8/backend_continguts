@@ -24,42 +24,61 @@ const socialAuthConfigSlides = [
       </div>
     `
   },
-  {
-    title: "Generació de Tokens segurs",
-    content: `
+{
+  "title": "Generació de Tokens segurs",
+  "content": `
       <h2 class="slide-title">2. Generació de Tokens</h2>
       <div class="text-large">
         <p>Per generar tokens criptogràficament segurs podem fer servir funcions PHP específiques:</p>
-        
         <div class="code-block mt-4">
           <div class="code-header">
-            <span class="code-language">PHP</span>
+            <button
+              class="btn btn-sm btn-dark php-popover-btn"
+              data-bs-toggle="popover"
+              title="openssl_random_pseudo_bytes"
+              data-bs-content="Genera bytes aleatoris utilitzant OpenSSL. $length Nombre de bytes que vols generar (no caràcters). Retorna: Un string binari."
+              data-bs-placement="bottom"
+            >
+              PHP
+            </button>
             <button class="copy-btn" onclick="copyCode('code1', this)">Copiar</button>
           </div>
           <pre><code id="code1">openssl_random_pseudo_bytes(int $length, bool &$strong_result = null): string</code></pre>
         </div>
-        
         <h4 class="mt-4">📝 Exemples pràctics:</h4>
-        
         <div class="code-block mt-3">
           <div class="code-header">
-            <span class="code-language">PHP</span>
+            <button
+              class="btn btn-sm btn-dark php-popover-btn"
+              data-bs-toggle="popover"
+              title="Funció uniqid"
+              data-bs-content="Genera un ID únic basat en el temps actual en microsegons. NO és criptogràficament segur per a tokens de seguretat."
+              data-bs-placement="bottom"
+            >
+              PHP
+            </button>
             <button class="copy-btn" onclick="copyCode('code2', this)">Copiar</button>
           </div>
           <pre><code id="code2">echo uniqid();
 // Sortida: 261b8fbcdc4ff0. ...</code></pre>
         </div>
-        
         <div class="code-block mt-3">
           <div class="code-header">
-            <span class="code-language">PHP</span>
+            <button
+              class="btn btn-sm btn-dark php-popover-btn"
+              data-bs-toggle="popover"
+              title="Exemple combinat"
+              data-bs-content="Exemple de generació d'un token usant openssl_random_pseudo_bytes() i convertint-lo a hexadecimal amb bin2hex()."
+              data-bs-placement="bottom"
+            >
+              PHP
+            </button>
             <button class="copy-btn" onclick="copyCode('code3', this)">Copiar</button>
           </div>
           <pre><code id="code3">$x = bin2hex(openssl_random_pseudo_bytes(16));
 echo $x;
 // Sortida: 6f19e8d4f5df8fae1e124941a48d980f (32 caràcters)</code></pre>
         </div>
-        
         <div class="important-note mt-4">
           <strong>📚 Enllaços útils:</strong><br>
           • <a href="https://www.php.net/manual/en/function.uniqid.php" target="_blank">uniqid() - PHP Manual</a><br>
@@ -68,18 +87,17 @@ echo $x;
         </div>
       </div>
     `
-  },
+},
   {
     title: "Reflexió sobre Tokens i Extensions",
     content: `
-      <h2 class="slide-title">🤔 Reflexió: Extensions PHP per a tokens</h2>
+      <h2 class="slide-title">2.1 Extensions PHP per a tokens</h2>
       <div class="text-large">
         <div class="module-card">
-          <div class="module-title">❓ Pregunta important</div>
-          <p><strong>Cal fer servir el repositori PECL (PHP Extension Community Library)?</strong></p>
+          <p><strong>🤔 Reflexió: Cal fer servir el repositori PECL (PHP Extension Community Library)?</strong></p>
         </div>
         
-        <h4 class="mt-4">💡 Consideracions:</h4>
+        <h4 class="mt-4">Consideracions:</h4>
         <ul class="concept-list">
           <li><strong>PECL</strong> conté extensions PHP escrites en C</li>
           <li>Algunes extensions de seguretat poden estar disponibles a PECL</li>
@@ -90,10 +108,6 @@ echo $x;
         
         <h4 class="mt-4">✅ Recomanació general:</h4>
         <p>Per a la majoria d'aplicacions web, les funcions natives de PHP per a generació de tokens són suficientment segures i no requereixen extensions PECL addicionals.</p>
-        
-        <div class="important-note mt-4">
-          <strong>⚠️ Important:</strong> Assegura't sempre que els tokens generats siguin realment aleatoris i amb entropia suficient per a l'ús previst.
-        </div>
       </div>
     `
   }

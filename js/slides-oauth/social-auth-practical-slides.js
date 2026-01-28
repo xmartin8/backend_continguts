@@ -1,14 +1,44 @@
 // Diapositiva de reflexió final
 const socialAuthPracticalSlides = [
   {
-    title: "Reflexió: Gestió de contrasenyes amb autenticació social",
+    title: "Gestió de contrasenyes amb autenticació social",
     content: `
-      <h2 class="slide-title">🤔 Reflexió: Gestió de contrasenyes</h2>
+      <h2 class="slide-title">12. Gestió híbrida de contrasenyes</h2>
       <div class="text-large">
         <div class="requadre">
-          <p><span class="requadre-impacte">Com hem de procedir amb el nostre web si un usuari que s'ha autenticat sempre mitjançant autenticació social vol recuperar la contrasenya?</span></p>
+          <p><span class="requadre-impacte">🤔 Com hem de procedir amb el nostre web si un usuari que s'ha autenticat sempre mitjançant autenticació social vol recuperar la contrasenya?</span></p>
         </div>
         
+        <h4 class="mt-4">Solucions possibles:</h4>
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <div class="generic-topic h-100">
+              <h4>🔗 Mètode alternatiu</h4>
+              <p><strong>Permetre afegir email/contrasenya:</strong><br>Quan un usuari es registra via social, oferir-li l'opció d'afegir un mètode d'autenticació alternatiu (email + contrasenya).</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="generic-topic h-100">
+              <h4>🔁 Redirecció</h4>
+              <p><strong>Gestió del proveïdor</strong><br>Dirigir els usuaris al proveïdor social corresponent per a la gestió del seu compte</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row mt-3">
+          <div class="col-md-6">
+            <div class="generic-topic h-100">
+              <h4>📧 Recuperació via email</h4>
+              <p><strong>Enllaç amb token:</strong><br>Enviar un enllaç únic al correu electrònic associat amb el compte social per restablir l'accés.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="generic-topic h-100">
+              <h4>📱 Verificació en dos passos</h4>
+              <p><strong>Seguretat addicional:</strong><br>Implementar verificació en dos passos per als comptes vinculats amb autenticació social.</p>
+            </div>
+          </div>
+        </div>      
         <h4 class="mt-4">💭 Consideracions:</h4>
         <div class="row mt-3">
           <div class="col-md-6">
@@ -33,19 +63,9 @@ const socialAuthPracticalSlides = [
               </ul>
             </div>
           </div>
-        </div>
-        
-        <h4 class="mt-4">✅ Solucions recomanades:</h4>
-        <ol class="concept-list">
-          <li><strong>Opcionalitat:</strong> Permetre als usuaris afegir una contrasenya local com a mètode alternatiu</li>
-          <li><strong>Clarificació:</strong> Explicar clarament als usuaris que l'autenticació social no utilitza contrasenyes del nostre sistema</li>
-          <li><strong>Redirecció:</strong> Dirigir els usuaris al proveïdor social corresponent per a la gestió del seu compte</li>
-          <li><strong>Enllaços:</strong> Proporcionar enllaços directes als portals de gestió de comptes dels proveïdors</li>
-          <li><strong>Suport:</strong> Tenir un sistema de suport per ajudar usuaris confosos</li>
-        </ol>
-        
+        </div>        
         <div class="important-note mt-4">
-          <strong>💡 Recomanació:</strong> Implementar un sistema que permeti als usuaris vincular múltiples mètodes d'autenticació (social + email/contrasenya) i gestionar-los des del seu perfil.
+          <strong>Recomanació:</strong> Implementar un sistema que permeti als usuaris vincular múltiples mètodes d'autenticació (social + email/contrasenya) i gestionar-los des del seu perfil.
         </div>
       </div>
     `

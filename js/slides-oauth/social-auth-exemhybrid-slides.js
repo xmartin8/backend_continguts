@@ -40,46 +40,6 @@ const socialAuthDatabaseSlides = [
             </div>
           </div>
         </div>
-        
-        <div class="requadre mt-4">
-          <h4>🤔 Reflexió important:</h4>
-          <p class="requadre-impacte">Com hem de procedir amb el nostre web si un usuari que s'ha autenticat sempre mitjançant autenticació social vol recuperar la contrasenya?</p>
-        </div>
-        
-        <h4 class="mt-4">🔐 Solucions possibles:</h4>
-        <div class="row mt-3">
-          <div class="col-md-6">
-            <div class="generic-topic h-100">
-              <h4>🔗 Mètode alternatiu</h4>
-              <p><strong>Permetre afegir email/contrasenya:</strong><br>Quan un usuari es registra via social, oferir-li l'opció d'afegir un mètode d'autenticació alternatiu (email + contrasenya).</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="generic-topic h-100">
-              <h4>🔁 Vinculació de comptes</h4>
-              <p><strong>Sistema de múltiples proveïdors:</strong><br>Permetre als usuaris vincular múltiples comptes socials (Google, Facebook, Twitter) al mateix compte a la teva aplicació.</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="row mt-3">
-          <div class="col-md-6">
-            <div class="generic-topic h-100">
-              <h4>📧 Recuperació via email</h4>
-              <p><strong>Enllaç màgic:</strong><br>Enviar un enllaç únic al correu electrònic associat amb el compte social per restablir l'accés.</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="generic-topic h-100">
-              <h4>📱 Verificació en dos passos</h4>
-              <p><strong>Seguretat addicional:</strong><br>Implementar verificació en dos passos per als comptes vinculats amb autenticació social.</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="important-note mt-4">
-          <strong>💡 Millor pràctica:</strong> Dissenyar el sistema per suportar autenticació híbrida des del principi. Permetre als usuaris vincular múltiples mètodes d'autenticació i gestionar-los des del seu perfil d'usuari. Informar clarament que l'autenticació social no utilitza contrasenyes del teu sistema.
-        </div>
       </div>
     `
   }

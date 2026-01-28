@@ -147,13 +147,15 @@ const socialAuthOauthSlides = [
             </div>
           </div>
         </div>
-        
         <div class="requadre mt-4">
-          <p><strong>🤔 Quina és la diferència entre OAuth1 i OAuth2?</strong></p>
+            <p><strong>🤔 Quina és la diferència entre OAuth1 i OAuth2?</strong></p>
         </div>
-        
-        <div class="important-note mt-4">
-          <strong>💡 Resposta breu:</strong> OAuth1 requereix signatura criptogràfica en cada petició, mentre que OAuth2 utilitza HTTPS i tokens d'accés. OAuth2 és més simple i més utilitzat actualment.
+
+          <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#oauthDiv" aria-expanded="false" aria-controls="oauthDiv">
+          Resposta
+        </button>       
+        <div class="important-note mt-4 collapse" id="oauthDiv">
+          OAuth1 requereix signatura criptogràfica en cada petició, mentre que OAuth2 utilitza HTTPS i tokens d'accés. OAuth2 és més simple i més utilitzat actualment.
         </div>
       </div>
     `

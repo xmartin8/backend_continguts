@@ -22,23 +22,50 @@ const socialAuthHybridSlides = [
             <span class="code-language">PHP</span>
             <button class="copy-btn" onclick="copyCode('code5', this)">Copiar</button>
           </div>
-          <pre><code id="code5">require_once("/path/to/hybridauth/Auth.php");
-
+          <pre><code id="code5">//configuració de $config per a Hybridauth, per a diversos proveïdors (Google,...). 
+//convenient posar en un fitxer PHP abans d’instanciar Hybrid_Auth
+require_once("/path/to/hybridauth/Auth.php");
+<?php
 $config = array(
+    "callback" => "http://localhost/callback.php", // URL on Hybridauth rebrà la resposta del proveïdor
     "providers" => array(
         "Google" => array(
             "enabled" => true,
             "keys" => array(
-                "id" => "CLIENT_ID",
-                "secret" => "CLIENT_SECRET"
+                "id" => "TU_CLIENT_ID_DE_GOOGLE",
+                "secret" => "TU_CLIENT_SECRET_DE_GOOGLE"
             ),
-            "scope" => "email profile"
+            "scope" => "email profile"  //opcional
         ),
-        // Més proveïdors...
-    )
+        //Cada proveïdor té la seva pròpia estructura de claus!!!
+        "Facebook" => array(
+            "enabled" => true,
+            "keys" => array(
+                "id" => "TU_APP_ID_DE_FACEBOOK",
+                "secret" => "TU_APP_SECRET_DE_FACEBOOK"
+            ),
+            "scope" => "email public_profile"
+        ),
+        "Twitter" => array(
+            "enabled" => true,
+            "keys" => array(
+                "key" => "TU_CONSUMER_KEY_DE_TWITTER",
+                "secret" => "TU_CONSUMER_SECRET_DE_TWITTER"
+            ),
+        ),
+    ),
+    "debug_mode" => true,   //control d'errors en log
+    "debug_file" => __DIR__ . "/hybridauth.log",
 );
 
-$hybridauth = new Hybrid_Auth($config);</code></pre>
+// Crear instància de Hybrid_Auth
+$hybridauth = new Hybrid_Auth($config);
+
+// connectem amb Google
+$adapter = $hybridauth->authenticate("Google");
+$userProfile = $adapter->getUserProfile();
+
+</code></pre>
         </div>
 
       </div>
