@@ -481,14 +481,14 @@ count(array_filter($llista, fn($x) => $x['actiu']))</code></pre>
       "request": "launch",
       "port": 9003,
       "pathMappings": {
-        "/var/www/html/mi_proyecto": "/ruta/absoluta/al/projecte"
+        "/var/www/html/meu_projecte": "/ruta/absoluta/al/projecte"
       }
     },
     {
       "name": "Depurar Chrome",
       "type": "chrome",
       "request": "launch",
-      "url": "http://localhost/mi_proyecto",
+      "url": "http://localhost/meu_projecte",
       "webRoot": "/ruta/absoluta/al/projecte/public"
     }
   ],
@@ -506,13 +506,13 @@ count(array_filter($llista, fn($x) => $x['actiu']))</code></pre>
           
           <h6>En Windows (CMD):</h6>
           <div class="code-block">
-            <pre><code class="cmd">cd C:\\Usuaris\\TuNom\\projectes\\mi_proyecto
+            <pre><code class="cmd">cd C:\\Usuaris\\teunom\\projectes\\meu_projecte
 echo %cd%</code></pre>
           </div>
           
           <h6>En Linux/Mac (Terminal):</h6>
           <div class="code-block">
-            <pre><code class="bash">cd /home/tunom/projectes/mi_proyecto
+            <pre><code class="bash">cd /home/teunom/projectes/meu_projecte
 pwd</code></pre>
           </div>
         </div>
@@ -524,7 +524,7 @@ pwd</code></pre>
           <li>O activa manualment afegint aquest paràmetre a la URL:
             <div class="code-block mt-2">
               <pre><code class="javascript">// URL per activar XDebug manualment
-http://localhost/mi_proyecto?XDEBUG_SESSION_START=VSCODE</code></pre>
+http://localhost/meu_projecte?XDEBUG_SESSION_START=VSCODE</code></pre>
             </div>
           </li>
           <li>Instal·la l'extensió de navegador <strong>"XDebug Helper"</strong></li>

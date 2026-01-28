@@ -151,7 +151,7 @@ const apiVirtualDomainSlides = [
             <span class="code-language">Windows</span>
             <button class="copy-btn" onclick="copyCode('hosts-path', this)">Copiar</button>
           </div>
-          <pre><code id="hosts-path">C:\Windows\System32\drivers\etc\hosts</code></pre>
+          <pre><code id="hosts-path">C:\\Windows\\System32\\drivers\\etc\\hosts</code></pre>
         </div>
 
         <h4 class="mt-4">📝 Afegim aquestes dues línies:</h4>
