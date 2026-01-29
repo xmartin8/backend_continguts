@@ -15,8 +15,8 @@ const apiheadersSlides = [
                 <span class="code-language">HTTP</span>
               </div>
               <pre><code>Content-Type: application/json
-Content-Type: application/xml
-Content-Type: multipart/form-data</code></pre>
+            Content-Type: application/xml
+            Content-Type: multipart/form-data</code></pre>
             </div>
           </div>
           
@@ -30,7 +30,8 @@ Content-Type: multipart/form-data</code></pre>
               <pre><code>Content-Length: 348</code></pre>
             </div>
           </div>
-          
+          </div>
+          <div class="generic-topics mt-4">
           <div class="generic-topic">
             <h4>Authorization</h4>
             <p>Proporciona credencials d'autenticació al servidor. Permet al client obtenir recursos protegits del servidor.</p>
@@ -85,7 +86,6 @@ Accept: application/xml, application/json</code></pre>
         </div>
 
         <div class="important-note mt-4">
-          <strong>📚 Recurs recomanat:</strong> 
           <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank" class="text-decoration-none">
             Guia completa de codis d'estat HTTP a MDN Web Docs
           </a>

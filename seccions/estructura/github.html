@@ -53,8 +53,8 @@ $config = [
     //'callback' => 'http://localhost/.../oauth/github.php',
     'callback' => 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/oauth/github.php', 
     'keys' => [
-        'id' => 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', 
-        'secret' => 'XXXXX XXXXXX XXX XXXXXXX XXXXxx',
+        'id' => 'CLIENT_ID', 
+        'secret' => 'CLIENT_SECRET',
     ]
 ];
 echo 'Callback URL: ' . $config['callback'];

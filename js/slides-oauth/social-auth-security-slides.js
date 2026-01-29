@@ -85,8 +85,8 @@ if (isset($_SESSION['userId'])) {
     return;
 }
 
-$clientID = 'XXXXXXXXXXX-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com';
-$clientSecret = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
+$clientID = 'CLIENT_ID';
+$clientSecret = 'CLIENT_SECRET';
 $redirectUri = 'http://localhost/Practiques/.......................';
 
 $client = new Google_Client();

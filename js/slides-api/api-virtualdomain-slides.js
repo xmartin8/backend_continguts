@@ -200,12 +200,12 @@ const apiVirtualDomainSlides = [
         </div>
 
         <div class="important-note mt-4">
-          <strong>💡 Ajuda per a problemes comuns:</strong>
+          <strong>Tingues en compte:</strong>
           <ul class="mt-2">
-            <li>Assegura't d'editar el fitxer hosts com a administrador</li>
-            <li>No afegeixis "http://" a les línies del fitxer hosts</li>
-            <li>Reinicia el navegador després de canviar el fitxer hosts</li>
-            <li>Executa <code>ipconfig /flushdns</code> a la consola si segueix sense funcionar</li>
+            <li>S'ha d'editar el fitxer hosts com a administrador</li>
+            <li>No afegir "http://" a les línies del fitxer hosts</li>
+            <li>Reiniciar el navegador després de canviar el fitxer hosts</li>
+            <li>Executar <code>ipconfig /flushdns</code> a la consola si segueix sense funcionar</li>
           </ul>
         </div>
       </div>

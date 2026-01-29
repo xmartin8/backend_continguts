@@ -3,7 +3,6 @@ const seguretatIntroSlides = [
   {
     title: "Configuració de Seguretat",
     content: `
-      <div class="security-content">
         <div class="security-image-container">
           <img src="../img/phpsecurity.jpg" alt="Seguretat en PHP" class="security-image" />
         </div>
@@ -72,7 +71,6 @@ const seguretatIntroSlides = [
             </div>
           </div>
         </div>
-      </div>
     `,
   }
 ];
