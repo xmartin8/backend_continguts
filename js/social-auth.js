@@ -6,6 +6,6 @@ const slides = [
   ...socialAuthProvidersSlides,
   ...socialAuthPracticalSlides,
   ...socialAuthSecuritySlides,
-  ...socialAuthExplainSlides
-  
+  ...socialAuthExplainSlides,
+  ...socialAuthExplain2Slides
 ];
