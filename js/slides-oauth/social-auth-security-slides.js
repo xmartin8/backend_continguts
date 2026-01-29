@@ -3,7 +3,7 @@ const socialAuthSecuritySlides = [
   {
     title: "Github amb HybridAuth",
     content: `
-      <h2 class="slide-title">10. Exemple Github amb HybridAuth</h2>
+      <h2 class="slide-title">11. Exemple Github amb HybridAuth</h2>
       <div class="text-large">
         <div class="code-block mt-3">
           <div class="code-header">
@@ -62,7 +62,7 @@ try {
   {
     title: "Google amb OAuth2.0",
     content: `
-      <h2 class="slide-title">11. Exemple Google amb OAuth2.0</h2>
+      <h2 class="slide-title">12. Exemple Google amb OAuth2.0</h2>
       <div class="text-large">
         <div class="code-block mt-3">
           <div class="code-header">

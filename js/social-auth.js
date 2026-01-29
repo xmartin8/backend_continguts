@@ -4,7 +4,8 @@ const slides = [
   ...socialAuthOauthSlides,
   ...socialAuthHybridSlides,
   ...socialAuthProvidersSlides,
-  ...socialAuthDatabaseSlides,
+  ...socialAuthPracticalSlides,
   ...socialAuthSecuritySlides,
-  ...socialAuthPracticalSlides
+  ...socialAuthExplainSlides
+  
 ];

@@ -3,7 +3,7 @@ const socialAuthPracticalSlides = [
   {
     title: "Gestió de contrasenyes amb autenticació social",
     content: `
-      <h2 class="slide-title">12. Gestió híbrida de contrasenyes</h2>
+      <h2 class="slide-title">10. Gestió híbrida de contrasenyes</h2>
       <div class="text-large">
         <div class="requadre">
           <p><span class="requadre-impacte">🤔 Com hem de procedir amb el nostre web si un usuari que s'ha autenticat sempre mitjançant autenticació social vol recuperar la contrasenya?</span></p>
