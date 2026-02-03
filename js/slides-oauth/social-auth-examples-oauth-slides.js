@@ -75,8 +75,8 @@ if (isset($_SESSION['userId'])) {
             <button class="copy-btn" onclick="copyCode('code-google4', this)">Copiar</button>
           </div>
           <pre><code id="code-google4">// AL fitxer .env (cal afegir-lo al .gitignore)
-GOOGLE_CLIENT_ID=264620490953-g5s2jh390pqo2263il5hlnacdbe4pbaj.apps.googleusercontent.com
-GOOGLE_CLIENT_SECRET=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
+GOOGLE_CLIENT_ID=el_teu_client_id
+GOOGLE_CLIENT_SECRET=el_teu_client_secret
 
 // Configuració del client
 $client = new Google_Client();
