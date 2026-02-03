@@ -2,7 +2,7 @@ const socialAuthExplain2Slides = [
   {
     title: "Explicació Github amb HybridAuth",
     content: `
-      <h2 class="slide-title">14. Flux complet d'autenticació social de GitHub amb HybridAuth</h2>
+      <h2 class="slide-title">18. Flux complet d'autenticació social de GitHub amb HybridAuth</h2>
       <div class="text-large">
 
         <p><strong>Fem clic a la icona de GitHub</strong><br>
@@ -67,17 +67,22 @@ if (isset($_SESSION['userId'])) {
         <p><strong>Configuro el provider </strong><br>Es defineix la configuració per GitHub OAuth.<br>
         <u>Callback:</u> és la URL on GitHub redirigirà l’usuari després de fer login.<br>
 <u>Keys:</u> id i secret són les credencials del OAuth app de GitHub.<br>
-<u>Observació:</u> S’ha fet de manera dinàmica amb <code>$_SERVER['HTTP_HOST']</code> i <code>dirname($_SERVER['PHP_SELF'])</code> per funcionar tant en local com en producció.</p>
+<u>Observació:</u> S’ha fet de manera dinàmica amb <code>$_SERVER['HTTP_HOST']</code> i <code>dirname($_SERVER['PHP_SELF'])</code> per funcionar tant en local com en producció.
+<u>Seguretat:</u> Configurarem els valors de ClientID i SecretID dins del fitxer .env</p>
         <div class="code-block mt-3">
           <div class="code-header">
             <span class="code-language">PHP</span>
             <button class="copy-btn" onclick="copyCode('code5', this)">Copiar</button>
           </div>
-          <pre><code id="code5">$config = [
+          <pre><code id="code5">//AL fitxer .env (cal afegir-lo al .gitignore)
+GITHUB_CLIENT_ID=a7ZQmP8K9xL2HfV8D1Rx
+GITHUB_CLIENT_SECRET=69n2887827e514bf85dbd10e913ecj49afa950f2
+
+$config = [
     'callback' => 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/oauth/github.php',
     'keys' => [
-        'id' => 'CLIENT_ID', 
-        'secret' => 'CLIENT_SECRET',
+        'id' => $_ENV['GITHUB_CLIENT_ID'],
+        'secret' => $_ENV['GITHUB_CLIENT_SECRET'],
     ]
 ];
 
@@ -129,25 +134,55 @@ Tinguem en compte que no necessitem password perquè GitHub ja valida l’usuari
         startSessionByUserId($userId);
     }
 }</code></pre>
-        </div>
+</div>
+<p>O podem controlar el conflicte de mateix email, és a dir, evitar que s'enregistri amb usr i psw i després ho provi amb Github</p>
+        <div class="code-block mt-3">
+          <div class="code-header">
+            <span class="code-language">PHP</span>
+            <button class="copy-btn" onclick="copyCode('code7', this)">Copiar</button>
+          </div>
+          <pre><code id="code7">function loginSocialProviderUser($email, $displayName, $socialProvider) {
+    if (userExistsByEmail($email)) {
+        $existingProvider = getUserSocialProvider($email);
+        
+        // Si ja té un provider diferent, mostrar error
+        if (!empty($existingProvider) && $existingProvider !== $socialProvider) {
+            die("This email is already registered with $existingProvider");
+        }
+        
+        // Si té password però no provider, oferir vincular comptes
+        if (empty($existingProvider) && !empty(getUserHash($email))) {
+            die("This email is already registered. Please log in with password or link your accounts.");
+        }
+        
+        startSession($email, true);
+    } else {
+        $userId = insertNewSocialUser($email, $displayName, $socialProvider);
+        startSessionByUserId($userId);
+    }
+}</code></pre>
+</div>        
 
         <p><strong>Inserció a la base de dades (si és nou usuari)</strong><br>
-        S'insereix a la taula <code>users</code> amb el camp <code>social_provider</code> = "GitHub":</p>
+        S'insereix a la taula <code>users</code> amb el camp <code>social_provider</code> = "GitHub", <code>oauth_access_token</code> ="elteutoken", <code>token_expiry</code> ="data_expiració":</p>
         <div class="code-block mt-3">
           <div class="code-header">
             <span class="code-language">PHP</span>
             <button class="copy-btn" onclick="copyCode('code8', this)">Copiar</button>
           </div>
-          <pre><code id="code8">function insertNewSocialUser($email, $nickname, $socialProvider) {
+          <pre><code id="code8">
+function insertNewSocialUser($email, $nickname, $socialProvider, $accessToken = null) {
     $connexio = getConnection();
     $statement = $connexio->prepare('
-        INSERT INTO users (email, nickname, social_provider)
-        VALUES (:email, :nickname, :socialProvider)
+        INSERT INTO users (email, nickname, social_provider, oauth_access_token, token_expiry)
+        VALUES (:email, :nickname, :socialProvider, :accessToken, :expiry)
     ');
     $statement->execute([
         'email' => $email,
         'nickname' => $nickname,
-        'socialProvider' => $socialProvider
+        'socialProvider' => $socialProvider,
+        'accessToken' => $accessToken,
+        'expiry' => date('Y-m-d H:i:s', strtotime('+1 hour'))
     ]);
     return $connexio->lastInsertId();
 }</code></pre>
@@ -225,7 +260,7 @@ if (!empty($userSocialProvider)) {
   {
     title: "Resum del flux OAuth amb GitHub",
     content: `
-      <h2 class="slide-title">15 Diagrama del flux complet</h2>
+      <h2 class="slide-title">19. Diagrama del flux complet</h2>
       <div class="text-large">
         <p><strong>Flux visual pas a pas:</strong></p>
         <ol style="line-height: 2;">
@@ -253,14 +288,6 @@ if (!empty($userSocialProvider)) {
           <li>✓ Configuració dinàmica (funciona en local i producció)</li>
         </ul>
 
-        <p style="margin-top: 30px;"><strong>Seguretat:</strong></p>
-        <ul style="line-height: 1.8;">
-          <li>🔒 Les credencials OAuth (Client ID/Secret) només es guarden al servidor</li>
-          <li>🔒 El password mai viatja per internet (GitHub el valida)</li>
-          <li>🔒 L'access token és temporal i només permet accés a dades públiques</li>
-          <li>🔒 La sessió PHP es gestiona de forma segura amb temps d'expiració</li>
-        </ul>
-
         <p style="margin-top: 30px;"><strong>Configuració a GitHub:</strong></p>
         <div class="code-block mt-3">
           <div class="code-header">
@@ -271,8 +298,8 @@ Homepage URL: http://localhost/controller
 Authorization callback URL: http://localhost/controller/oauth/github.php
 
 → GitHub et dona:
-   Client ID: Iv23liMag0QY2GVm9oiM
-   Client Secret: 69c2007827e514bf85dbd18e913ece49afa950f4</code></pre>
+   Client ID: CLIENT_ID
+   Client Secret: SECRET_ID</code></pre>
         </div>
 
       </div>
