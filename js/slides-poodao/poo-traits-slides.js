@@ -1,9 +1,9 @@
 // Diapositives sobre Herència i Traits
 const pooTraitsSlides = [
     {
-        title: "Herència i Traits",
+        title: "2. Herència i Traits",
         content: `
-            <h2 class="slide-title">Herència i Traits</h2>
+            <h2 class="slide-title">2. Herència i Traits</h2>
             <p>Si volem reutilitzar codi en diferents classes:</p>
             
             <div class="important-note">

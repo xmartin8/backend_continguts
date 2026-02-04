@@ -3,7 +3,7 @@ const pooConceptsSlides = [
     {
         title: "Conceptes de POO",
         content: `
-<h2 class="slide-title">Cal conèixer els següents conceptes de POO</h2>
+<h2 class="slide-title">1. Cal conèixer els següents conceptes de POO</h2>
 <div class="concept-grid">
     <div class="concept-column">
         <div class="concept-card">

@@ -1,4 +1,4 @@
-const phpdocintroslides =[
+const phpdocprofitslides =[
 
      {
     title: "Beneficis en IDEs",

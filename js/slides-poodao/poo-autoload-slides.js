@@ -1,9 +1,9 @@
 // Diapositives sobre Autoload
 const pooAutoloadSlides = [
     {
-        title: "Autoload",
+        title: "3. Autoload",
         content: `
-            <h2 class="slide-title">Autoload</h2>
+            <h2 class="slide-title">3. Autoload</h2>
             
             <p>Carregarem classes, interfícies i traits sense necessitat de fer <code>require</code> o <code>include</code>.</p>
             

@@ -1,9 +1,9 @@
-const phpdocintroslides =[
+const phpdocadviceslides =[
 
       {
-    title: "Millors pràctiques i consells",
+    title: "Consells i bona praxis",
     content: `
-      <h2 class="slide-title">Millors pràctiques i consells</h2>
+      <h2 class="slide-title">Consells i bona praxis</h2>
       <div class="text-large">
         <p>Recomanacions per obtenir el màxim benefici de PHPDocumentor.</p>
         

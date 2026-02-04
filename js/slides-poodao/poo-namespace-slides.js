@@ -1,9 +1,9 @@
 // Diapositives sobre Namespace
 const pooNamespaceSlides = [
     {
-        title: "Namespace",
+        title: "4. Namespace",
         content: `
-            <h2 class="slide-title">Namespace</h2>
+            <h2 class="slide-title">4. Namespace</h2>
             
             <p>Com evitàvem fins ara tenir dos noms de fitxers idèntics en una estructura MVC?</p>
             
