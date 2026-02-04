@@ -395,7 +395,7 @@ public\\s+function\\s+(\\w+)</code></pre>
         </div>
         
         <div class="important-note mt-3">
-          <h5>🎯 Consells per debugging PHP:</h5>
+          <h5>Consells per debugging PHP:</h5>
           <ul class="concept-list">
             <li><strong>Usa watch expressions</strong> per monitoritzar variables específiques</li>
             <li><strong>Conditional breakpoints</strong>: Clic dret → Edit Breakpoint per afegir condicions</li>

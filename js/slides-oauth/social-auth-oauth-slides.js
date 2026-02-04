@@ -168,7 +168,7 @@ const socialAuthOauthSlides = [
         <div class="diagram-container">
           <div class="social-auth-images diagram-full">
             <div class="social-auth-image-container diagram-full-container">
-              <img src="../img/diagram-oauth.png" alt="Diagrama Flux OAuth 2.0" class="diagram-image" />
+              <img src="../img/oauth-2-flow-diagram.png" alt="Diagrama Flux OAuth 2.0" class="diagram-image" />
             </div>
           </div>
         </div>
