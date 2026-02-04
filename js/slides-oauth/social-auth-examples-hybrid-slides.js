@@ -67,7 +67,7 @@ if (isset($_SESSION['userId'])) {
         <p><strong>Configuro el provider </strong><br>Es defineix la configuració per GitHub OAuth.<br>
         <u>Callback:</u> és la URL on GitHub redirigirà l’usuari després de fer login.<br>
 <u>Keys:</u> id i secret són les credencials del OAuth app de GitHub.<br>
-<u>Observació:</u> S’ha fet de manera dinàmica amb <code>$_SERVER['HTTP_HOST']</code> i <code>dirname($_SERVER['PHP_SELF'])</code> per funcionar tant en local com en producció.
+<u>Observació:</u> S’ha fet de manera dinàmica amb <code>$_SERVER['HTTP_HOST']</code> i <code>dirname($_SERVER['PHP_SELF'])</code> per funcionar tant en local com en producció.<br>
 <u>Seguretat:</u> Configurarem els valors de ClientID i SecretID dins del fitxer .env</p>
         <div class="code-block mt-3">
           <div class="code-header">

@@ -82,7 +82,7 @@ GOOGLE_CLIENT_SECRET=el_teu_client_secret
 $client = new Google_Client();
 $client->setClientId($_ENV['GOOGLE_CLIENT_ID']);
 $client->setClientSecret($_ENV['GOOGLE_CLIENT_SECRET']);
-$client->setRedirectUri('http://localhost/Practiques/nba-branch8/controller/oauth/google.php');
+$client->setRedirectUri('http://.../oauth/google.php');
 $client->addScope("email");    // Permís per accedir al email
 $client->addScope("profile");  // Permís per accedir al perfil</code></pre>
         </div>

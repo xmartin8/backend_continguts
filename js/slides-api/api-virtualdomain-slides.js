@@ -65,7 +65,7 @@ const apiVirtualDomainSlides = [
   {
     title: "Configuració del fitxer httpd-vhosts.conf",
     content: `
-      <h2 class="slide-title">Pas 1: Configurar Apache Virtual Hosts</h2>
+      <h2 class="slide-title">7.1. Pas 1: Configurar Apache Virtual Hosts</h2>
       <div class="text-large">
         
         <div class="requadre mb-4">
@@ -138,7 +138,7 @@ const apiVirtualDomainSlides = [
   {
     title: "Configuració del fitxer hosts del sistema",
     content: `
-      <h2 class="slide-title">Pas 2: Configurar el fitxer hosts del sistema</h2>
+      <h2 class="slide-title">7.2. Pas 2: Configurar el fitxer hosts del sistema</h2>
       <div class="text-large">
         
         <div class="requadre mb-4">
@@ -214,7 +214,7 @@ const apiVirtualDomainSlides = [
   {
     title: "Configuració final i verificació",
     content: `
-      <h2 class="slide-title">Pas 3: Configuració final i verificació</h2>
+      <h2 class="slide-title">7.3. Pas 3: Configuració final i verificació</h2>
       <div class="text-large">
         
         <h4>🔄 Resum dels passos realitzats:</h4>
