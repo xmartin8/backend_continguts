@@ -1,0 +1,14 @@
+.jwt-image-container {
+    text-align: center;
+    margin: 1rem 0 2rem 0;
+}
+
+.jwt-image {
+    max-width: 60%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 1px solid #dee2e6;
+    max-height: 300px;
+    object-fit: contain;
+}

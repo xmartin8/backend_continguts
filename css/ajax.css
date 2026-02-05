@@ -5,13 +5,11 @@
 
 .ajax-image {
     width: 100%;
-    max-width: 80%;      /* Hero-style: més gran però controlada */
-    max-height: 350px;   /* Ajusta segons necessiti */
+    max-width: 80%;      
+    max-height: 350px;  
     height: auto;
     object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    border: 1px solid #dee2e6;
+
 }
 
 /* Responsive */

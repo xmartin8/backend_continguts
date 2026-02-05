@@ -4,7 +4,6 @@ const slides = [
   ...ajaxXhrSlides,
   ...ajaxFetchSlides,
   ...ajaxJquerySlides,
-  ...ajaxPhpSlides,
   ...ajaxRequestsSlides,
   ...ajaxJsonSlides,
   ...ajaxErrorsSlides,
