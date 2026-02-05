@@ -5,7 +5,7 @@ const apiEndpointsSlides = [
       <h3 class="slide-title">Lectura d'un endpoint</h3>
       
       <div class="text-large mb-4">
-        <p>En llegir dades d'un endpoint, cal plantejar-se i analitzar diferents factors:</p>
+        <p>Què cal tenir en compte?</p>
         <ul class="concept-list">
           <li><strong>Freqüència d'accés:</strong> amb quina periodicitat necessitem les dades</li>
           <li><strong>Mida de les dades:</strong> quantitat d'informació a processar</li>
@@ -15,23 +15,18 @@ const apiEndpointsSlides = [
       </div>
 
       <div class="module-card">
-        <h4 class="module-title">Què cal tenir en compte?</h4>
-        <p class="text-lg">Quin mètode triarem per assegurar la persistència de les dades?</p>
-        
+        <h4 class="module-title">Quin mètode triarem per assegurar la persistència de les dades?</h4>        
         <div class="generic-topics mt-3">
           <div class="generic-topic">
-            <h5>Opció 1</h5>
-            <p><strong>Guardar el contingut en una taula temporal</strong> a la base de dades</p>
+            <h5>Guardar el contingut en una taula temporal a la base de dades?</h5>
           </div>
           
           <div class="generic-topic">
-            <h5>Opció 2</h5>
-            <p><strong>Tractar les dades directament</strong> des del fitxer JSON</p>
+            <h5>Tractar les dades directament des del fitxer JSON?</h5>
           </div>
           
           <div class="generic-topic">
-            <h5>Opció 3</h5>
-            <p>Fer que l'endpoint <strong>guardi només les dades necessàries</strong></p>
+            <h5>Fer que l'endpoint guardi només les dades necessàries?</h5>
           </div>
         </div>
       </div>
@@ -42,31 +37,24 @@ const apiEndpointsSlides = [
         <div class="row">
           <div class="col-md-4">
             <div class="generic-topic h-100">
-              <h5>Híbrid 1</h5>
               <p><strong>Llegir JSON i guardar les dades filtrades</strong> en base de dades</p>
             </div>
           </div>
           
           <div class="col-md-4">
             <div class="generic-topic h-100">
-              <h5>Híbrid 2</h5>
               <p><strong>Llegir JSON i guardar-lo temporalment</strong> en una memòria cau (Memcached)</p>
             </div>
           </div>
           
           <div class="col-md-4">
             <div class="generic-topic h-100">
-              <h5>Híbrid 3</h5>
               <p><strong>Sincronització amb l'endpoint</strong> mitjançant un script "Cron Job"</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="important-note mt-4">
-        <h5>💡 Consell pràctic:</h5>
-        <p class="mb-0">La tria del mètode depèn de factors com la volatilitat de les dades, la freqüència d'actualització i els requeriments de rendiment de la vostra aplicació.</p>
-      </div>
     `
   },
   {
@@ -78,36 +66,24 @@ const apiEndpointsSlides = [
         <p>Com hem d'actuar en cas que el proveïdor canviï l'estructura de l'endpoint proporcionat?</p>
      </div>
 
-      <div class="generic-topics mb-4">
-        <div class="generic-topic">
-          <h4>1. Validació anticipada</h4>
-          <p>Comprovar l'estructura del JSON abans de processar-lo</p>
-          <div class="code-block mt-2">
-            <div class="code-header">
-              <span class="code-language">PHP</span>
-            </div>
-            <pre><code class="php">// Exemple de validació d'estructura
-function validarEstructuraJson($dada) {
-    // comprovem si existeixen les claus i l'estructura
-    return true;
-}
+<div class="generic-topics mb-4">
+  <div class="generic-topic">
+    <h4>1. Validació anticipada</h4>
+    <p>Comprovar l'estructura del JSON abans de processar-lo</p>
+    <div class="text-center mt-3">
+        <img src="../img/endpoint_modif.png"
+             alt="Endpoint modificat"
+             class="img-fluid"
+             style="max-width: 100%; cursor: pointer;">
+    </div>
 
-$dadajson = json_decode(file_get_contents(), true);
-if (true) {
-    // Processem el JSON
-} else {
-    // Gestionem l'error
-    error_log(...);
-}
+  </div>
+</div>
 
-// comprovació de la clau en qüestió
-$keyvalue = isset($dadajson['clau']) ? $dadajson['clau'] : 'sense valor';</code></pre>
-          </div>
-        </div>
         
         <div class="generic-topic">
           <h4>2. Gestió de logs i excepcions</h4>
-          <p>Registrar errors i informar de canvis en l'estructura</p>
+          <p>Registrar errors i informar de canvis en l'estructura. Ens serà útil tenir un registre dels errors i uns logs configurats que ens informin de canvis sobre l’estructura inicial del JSON.</p>
           <div class="code-block mt-2">
             <div class="code-header">
               <span class="code-language">PHP</span>
@@ -125,7 +101,7 @@ $keyvalue = isset($dadajson['clau']) ? $dadajson['clau'] : 'sense valor';</code>
       </div>
 
       <div class="module-card">
-        <h4 class="module-title">Estratègies avançades</h4>
+        <h4 class="module-title">Altres casos més avançats</h4>
         
         <div class="row mt-3">
           <div class="col-md-6">
@@ -158,10 +134,36 @@ foreach ($mapeig ...) {
       </div>
     `
   },
-  {
-    title: "Estructura de resposta JSON",
+   {
+    title: "Creació d'un endpoint: Tractament del JSON",
     content: `
-      <h3 class="slide-title">Estructura estàndard per a respostes JSON</h3>
+      <h3 class="slide-title">Creació d'un endpoint: Tractament del JSON</h3>
+      
+      <div class="text-large mb-4">
+        <p>Es recomana treballar amb una estructura fixe a la capçalera del nostre fitxer JSON.
+
+Cal que diferenciem entre l’status del protocol HTTP i l’status de la sol·licitud (GET, POST, ...) què és l’estat que retornem des del controlador</p>
+     </div>
+
+<div class="generic-topics mb-4">
+  <div class="generic-topic">
+    <div class="text-center mt-3">
+        <img src="../img/endpoint_creacio.png"
+             alt="Endpoint modificat"
+             class="img-fluid"
+             style="max-width: 100%; cursor: pointer;">
+    </div>
+
+  </div>
+</div>
+
+ `
+  },
+
+  {
+    title: "Creació d'un endpoint: Estructura de resposta JSON",
+    content: `
+      <h3 class="slide-title">Creació d'un endpoint: Estructura estàndard per a respostes JSON</h3>
       
       <div class="text-large mb-4">
         <p>Cal diferenciar entre l'<strong>status del protocol HTTP</strong> i l'<strong>status de la sol·licitud</strong> que és l'estat que retornem des del controlador.</p>
@@ -217,7 +219,13 @@ foreach ($mapeig ...) {
 }</code></pre>
               </div>
               <p class="mt-3"><strong>Important:</strong> En qualsevol dels dos casos anteriors (true o false), l'status del protocol HTTP serà correcte (200 OK).</p>
-            </div>
+                <div class="text-center mt-3">
+        <img src="../img/endpoint_statusOK.png"
+             alt="Endpoint modificat"
+             class="img-fluid"
+             style="max-width: 100%; cursor: pointer;">
+    </div>
+              </div>
           </div>
         </div>
       </div>
@@ -253,27 +261,42 @@ foreach ($mapeig ...) {
         </div>
       </div>
 
-      <div class="important-note mt-4">
-        <h5>💡 Bonas pràctiques:</h5>
-        <p class="mb-0">1. Mantenir una estructura de resposta consistent per a tots els endpoints.<br>
-        2. Separar clarament els errors HTTP dels errors de lògica d'aplicació.<br>
-        3. Incloure missatges descriptius per ajudar als clients de la API.</p>
-      </div>
+    `
+  },
+      {
+     title: "Creació d'un endpoint: Control d'errors generats",
+    content: `
+    <h3 class="slide-title">Creació d'un endpoint: Control d'errors generats</h3>
+          <div class="text-large mb-4">
+        <p>Els errors com ara 404, 403, etc... caldrà que els controleu:</p>
+     </div>
+
+<div class="generic-topics mb-4">
+  <div class="generic-topic">
+    <div class="text-center mt-3">
+        <img src="../img/endpoint_error404.png"
+             alt="Endpoint modificat"
+             class="img-fluid"
+             style="max-width: 100%; cursor: pointer;">
+    </div>
+
+  </div>
+</div>
     `
   },
   {
-    title: "Creació d'un endpoint - Controladors",
+    title: "Creació d'un endpoint: Controladors",
     content: `
-      <h3 class="slide-title">Creació d'un endpoint - Estructura de controladors</h3>
+      <h3 class="slide-title">Creació d'un endpoint: Estructura de controladors</h3>
       
       <div class="text-large mb-4">
-        <p>Partim d'un sistema de vendes de productes, on treballarem amb entitats com <strong>Productes, Clients, Usuaris, Comptes</strong>, etc.</p>
+        <p>Partim del següent exemple: Un sistema de vendes de productes, on treballarem amb entitats com <strong>Productes, Clients, Usuaris, Comptes</strong>, etc.</p>
         <p>Aquest sistema fa el tractament d'APIs i necessitem als nostres controladors definir les operacions CRUD.</p>
       </div>
 
       <div class="module-card">
         <h4 class="module-title">Estructura base del controlador</h4>
-        <p>Cadascú dels controladors es defineix com una classe que hereta de <code>Controllers.php</code>, que contindrà totes les operacions comunes.</p>
+        <p>Cadascú dels controladors el definirem com una classe que hereta de <code>Controllers.php</code>, aquest fitxer contindrà totes les operacions comunes per a qualsevol controlador.</p>
         
         <div class="code-block mt-3">
           <div class="code-header">
@@ -286,23 +309,23 @@ foreach ($mapeig ...) {
     }
     
     public function producte($idproducte) {
-        // Llegirà mitjançant peticions GET
+        // Llegirà mitjançant peticions GET per a obtenir dades de la API
     }
     
     public function productes() {
-        // Llegirà mitjançant peticions GET  
+        // Llegirà mitjançant peticions GET per a obtenir dades de la API  
     }
     
     public function registre() {
-        // Creació mitjançant POST
+        // Creació de productes mitjançant POST
     }
     
     public function actualitzar($idproducte) {
-        // Actualització mitjançant PUT
+        // Actualització de productes mitjançant PUT
     }
     
     public function eliminar($idproducte) {
-        // Eliminació mitjançant DELETE
+        // Eliminació de productes mitjançant DELETE
     }
 }</code></pre>
         </div>
@@ -374,9 +397,9 @@ foreach ($mapeig ...) {
     `
   },
   {
-    title: "Creació d'un endpoint - Implementació",
+    title: "Creació d'un endpoint: Implementació",
     content: `
-      <h3 class="slide-title">Creació d'un endpoint - Implementació detallada</h3>
+      <h3 class="slide-title">Creació d'un endpoint: Implementació detallada</h3>
       
       <div class="text-large mb-4">
         <p>Analitzem la implementació dels mètodes del controlador, especialment el maneig de diferents tipus de peticions HTTP.</p>
@@ -451,9 +474,9 @@ foreach ($mapeig ...) {
           </div>
           <pre><code class="php">function jsonResponse(array $arrayDades, int $codi) {
     if(is_array($arrayDades)) {
-        // Estableix el codi d'estat HTTP
+        // Estableix el codi d'estat HTTP. Aquesta línea envia una capçalera per a establir el codi d’estat de la resposta ($codi).
+        // El codi d’estat ($codi) és fundamental per a que el client sàpiga si ha hagut algún error a la petició.
         header("HTTP/1.1 " . $codi);
-        
         // Estableix el tipus de contingut amb format JSON  
         header("Content-Type: application/json");
         
@@ -486,9 +509,9 @@ foreach ($mapeig ...) {
     `
   },
   {
-    title: "Gestió dels endpoints - Routing",
+    title: "Gestió dels endpoints: Routing",
     content: `
-      <h3 class="slide-title">Gestió dels endpoints - Sistema de Routing</h3>
+      <h3 class="slide-title">Gestió dels endpoints: Sistema de Routing</h3>
       
       <div class="text-large mb-4">
         <p>On es gestionen els endpoints que fa servir l'usuari? On declarem els endpoints que farem públics per a poder accedir a la nostra API?</p>
@@ -575,24 +598,24 @@ foreach ($mapeig ...) {
       </div>
 
       <div class="important-note mt-4">
-        <h5>📋 Resum de conceptes clau:</h5>
+        <h5>Resum:</h5>
         <ul class="mb-0">
           <li>El <strong>routing</strong> és responsable d'interpretar les peticions HTTP i redirigir-les al controlador i mètode corresponent</li>
           <li>Cada mètode del controlador correspon a un endpoint públic de la API</li>
           <li>Es segueixen les convencions REST per als mètodes HTTP (GET, POST, PUT, DELETE)</li>
           <li>Els endpoints segueixen una estructura consistent i previsible</li>
         </ul>
-      </div>
-
-      <div class="mt-4 pt-3 border-top">
+              <div class="mt-4 pt-3 border-top">
         <div class="api-image-container">
           <h5 class="text-center mb-3">Flux complet d'una petició API</h5>
           <div class="text-center">
             <p class="mb-2"><strong>Client → Routing → Controlador → Model → Base de dades</strong></p>
-            <p class="text-muted small">Cada component té una responsabilitat ben definida, seguint el principi de separació de preocupacions.</p>
-          </div>
+            </div>
         </div>
       </div>
+      </div>
+
+
     `
   }
 ];
