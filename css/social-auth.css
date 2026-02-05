@@ -1,51 +1,50 @@
 .social-auth-images {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    margin: 1rem 0 2rem 0;
+    gap: 2.5rem;
+    margin: 1.5rem 0 2.5rem 0;
     flex-wrap: wrap;
 }
 
 .social-auth-image-container {
     text-align: center;
-    flex: 1;
-    min-width: 300px;
-    max-width: 45%;
+    flex: 0 0 38%;
+    max-width: 38%;
 }
 
 .social-auth-image {
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    max-height: 320px;  
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     border: 1px solid #dee2e6;
-    max-height: 300px;
     object-fit: contain;
 }
+
 
 /* Responsive */
 @media (max-width: 992px) {
     .social-auth-image-container {
-        min-width: 250px;
-        max-width: 100%;
+        flex: 0 0 60%;
+        max-width: 60%;
+    }
+
+    .social-auth-image {
+        max-height: 300px;
     }
 }
 
 @media (max-width: 768px) {
-    
-    .social-auth-images {
-        flex-direction: column;
-        align-items: center;
-    }
-    
     .social-auth-image-container {
-        max-width: 90%;
+        max-width: 82%;
     }
-    
-    .social-auth-topics {
-        grid-template-columns: 1fr;
+
+    .social-auth-image {
+        max-height: 280px;
     }
 }
+
 
 @media (max-width: 480px) {
     .social-auth-image-container {

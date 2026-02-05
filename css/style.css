@@ -416,10 +416,12 @@ body {
 
 .generic-topics {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr); /* 4 per fila */
+    gap: 1.25rem;
     margin-top: 2rem;
+    justify-content: center;
 }
+
 
 .generic-topic {
     padding: 1rem;
