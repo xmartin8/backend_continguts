@@ -7,6 +7,9 @@ const slides = [
   ...apiheadersSlides,
   ...apiideConfigSlides,
   ...apiVirtualDomainSlides,
-  ...apiEndpointsSlides
+  ...apiEndpointsSlides,
+  ...apiEndpoints2Slides,
+  ...apiEndpoints3Slides,
+  ...apiEndpoints4Slides
 ];
 
