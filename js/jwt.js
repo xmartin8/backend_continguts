@@ -462,16 +462,16 @@ try {
           </div>
         </div>
         
-        <div class="requadre mt-4">
-          <p><strong>🔐 Claims estàndard de JWT</strong></p>
+        <div class="module-card mt-4">
+          <div class="module-title">🔐 Claims estàndard de JWT</strong></div>
           <ul>
-            <li><strong>iss (issuer):</strong> Emissor del token</li>
-            <li><strong>sub (subject):</strong> Subjecte del token (normalment usuari ID)</li>
-            <li><strong>aud (audience):</strong> Destinatari del token</li>
-            <li><strong>exp (expiration):</strong> Data d'expiració (timestamp)</li>
-            <li><strong>nbf (not before):</strong> No abans de (timestamp)</li>
-            <li><strong>iat (issued at):</strong> Emès a (timestamp)</li>
-            <li><strong>jti (JWT ID):</strong> Identificador únic del token</li>
+            <strong>iss (issuer):</strong> Emissor del token<br>
+            <strong>sub (subject):</strong> Subjecte del token (normalment usuari ID)<br>
+            <strong>aud (audience):</strong> Destinatari del token<br>
+            <strong>exp (expiration):</strong> Data d'expiració (timestamp)<br>
+            <strong>nbf (not before):</strong> No abans de (timestamp)<br>
+            <strong>iat (issued at):</strong> Emès a (timestamp)<br>
+            <strong>jti (JWT ID):</strong> Identificador únic del token
           </ul>
         </div>
       </div>
@@ -574,7 +574,7 @@ try {
             <li><strong>JWT + OAuth:</strong> Per a APIs públiques, autorització avançada</li>
             <li><strong>API Key + JWT:</strong> Híbrid per a diferents tipus de clients</li>
           </ul>
-          <p class="mt-2"><strong>Recorda:</strong> Amb JWT sol, implementa sempre expiració, validació i HTTPS.</p>
+          <p class="mt-2"><strong>Nota:</strong> Amb JWT sol, implementa sempre expiració, validació i HTTPS.</p>
         </div>
       </div>
     `
