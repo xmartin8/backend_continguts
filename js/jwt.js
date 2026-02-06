@@ -191,8 +191,8 @@ grant_type=authorization_code
 &client_secret=CLIENT_SECRET</code></pre>
         </div>
         
-        <div class="requadre mt-4">
-          <p><strong>🤔 Ens cal aplicar OAuth 2.0?</strong></p>
+        <div class="module-card mt-4">
+          <div class="module-title">🤔 Ens cal aplicar OAuth 2.0?</div>
           <p>Valora OAuth 2.0 si:</p>
           <ul>
             <li>La teva API serà utilitzada per múltiples aplicacions</li>
@@ -352,7 +352,7 @@ try {
         </div>
         
         <div class="module-card mt-4">
-          <div class="module-title">⚠️ Bones pràctiques en generació</div>
+          <div class="module-title">⚠️ Bones praxis</div>
           <ul>
             <li><strong>Claus fortes:</strong> Utilitza claus llargues i aleatòries</li>
             <li><strong>Expiració curta:</strong> Tokens amb vida útil limitada (hores, no dies)</li>
