@@ -7,7 +7,6 @@ const apiVirtualDomainSlides = [
       <div class="text-large">
         
         <div class="module-card">
-          <div class="module-title">🎯 Per què configurar un domini virtual?</div>
           <p>Pot ser interessant configurar un domini virtual, entre d'altres motius, per a:</p>
           <ul class="concept-list">
             <li>Separar la part lògica del projecte</li>

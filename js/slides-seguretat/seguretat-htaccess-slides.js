@@ -308,7 +308,7 @@ ErrorDocument 500 /errors/500.html</code></pre>
     </div>
     
     <div class="important-note mt-4">
-      <strong>💡 Consell pràctic:</strong>Assegura't que el servidor Apache té els mòduls necessaris activats (mod_deflate, mod_auth_basic, etc.).
+      <strong>💡 Important: </strong>Assegura't que el servidor Apache té els mòduls necessaris activats (mod_deflate, mod_auth_basic, etc.).
     </div>
   `
 }

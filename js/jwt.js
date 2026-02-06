@@ -12,7 +12,7 @@ const slides = [
           <div class="generic-topics">
             <div class="generic-topic">
               <h4>🔐 Què és JWT?</h4>
-              <p>JSON Web Token és un estàndard obert per a representar claims de manera segura entre dues parts.</p>
+              <p>JSON Web Token és un estàndard obert per a representar <strong>afirmacions</strong> de manera segura entre dues parts.</p>
             </div>
 
             <div class="generic-topic">
@@ -66,13 +66,12 @@ const slides = [
           <p>El client obté una API KEY única del proveïdor de l'API. Aquesta clau s'inclou a cada sol·licitud, ja sigui al header o com a paràmetre a la URL.</p>
         </div>
         
-        <h4 class="mt-4">📝 Formats d'inclusió:</h4>
+        <h4 class="mt-4">Exemple de cada cas:</h4>
         <div class="row mt-3">
           <div class="col-md-6">
-            <div class="code-block h-100">
+            <div class="code-block mt-3">
               <div class="code-header">
                 <span>Via Header HTTP</span>
-                <button class="copy-btn">Copiar</button>
               </div>
               <pre><code class="http">GET /api/resource HTTP/1.1
 Host: meudomini.com
@@ -80,10 +79,9 @@ Authorization: Api-Key iy23t5ui34534y5fo3f5ou345</code></pre>
             </div>
           </div>
           <div class="col-md-6">
-            <div class="code-block h-100">
+            <div class="code-block mt-3">
               <div class="code-header">
                 <span>Via Paràmetre URL</span>
-                <button class="copy-btn">Copiar</button>
               </div>
               <pre><code class="http">https://meudomini.com/api/user?token=eyJhbGciOiJIUzI1Ni...</code></pre>
             </div>
@@ -115,8 +113,7 @@ Authorization: Api-Key iy23t5ui34534y5fo3f5ou345</code></pre>
         </div>
         
         <div class="module-card mt-4">
-          <div class="module-title">🤔 Pregunta crítica</div>
-          <p><strong>On gestionem les KEYS de la nostra API?</strong></p>
+          <div class="module-title">🤔 On gestionem les KEYS de la nostra API?</div>
           <ul>
             <li><strong>Base de dades segura:</strong> Emmagatzematge xifrat de les claus</li>
             <li><strong>Vault de secrets:</strong> Sistemes com HashiCorp Vault, AWS Secrets Manager</li>
@@ -204,7 +201,7 @@ grant_type=authorization_code
       </div>
     `
   },
-  {
+   {
     title: "JSON Web Tokens (JWT)",
     content: `
       <h2 class="slide-title">JSON Web Tokens - Tokens Autocontinguts</h2>
@@ -215,61 +212,54 @@ grant_type=authorization_code
           <div class="col-md-4">
             <div class="generic-topic h-100">
               <h4>📦 3 Parts</h4>
-              <p>1. <strong>Header:</strong> Algorisme i tipus de token<br>
-              2. <strong>Payload:</strong> Claims (afirmacions)<br>
-              3. <strong>Signature:</strong> Verificació d'integritat</p>
+              <p>
+                1. <strong>Header:</strong> Algorisme i tipus de token<br>
+                2. <strong>Payload:</strong> <strong>Afirmacions</strong><br>
+                3. <strong>Signature:</strong> Verificació d'integritat
+              </p>
             </div>
           </div>
+
           <div class="col-md-4">
             <div class="generic-topic h-100">
               <h4>🔐 Stateless</h4>
               <p>El servidor no guarda l'estat de sessió. El JWT conté tota la informació necessària.</p>
             </div>
           </div>
+
           <div class="col-md-4">
             <div class="generic-topic h-100">
               <h4>📝 Autosuficient</h4>
-              <p>Inclou metadades, claims d'usuari, dates d'expiració i pot ser verificat sense consultar BD.</p>
+              <p>Inclou metadades, <strong>afirmacions</strong> d'usuari, dates d'expiració i pot ser verificat sense consultar la base de dades.</p>
             </div>
           </div>
         </div>
-        
+
         <h4 class="mt-4">🎯 Casos d'ús ideals:</h4>
         <div class="row mt-3">
           <div class="col-md-6">
             <div class="generic-topic h-100">
               <h4>✅ Autenticació Stateless</h4>
-              <p>Perfecte per a microserveis, APIs REST i aplicacions sense estat. El servidor no necessita mantenir sessions.</p>
+              <p>Perfecte per a microserveis, APIs REST i aplicacions sense estat.</p>
             </div>
           </div>
+
           <div class="col-md-6">
             <div class="generic-topic h-100">
               <h4>✅ Informació personalitzada</h4>
-              <p>Pots incloure rols, permisos, temps d'expiració i altres metadades dins del propi token.</p>
+              <p>Pots incloure rols, permisos, temps d'expiració i altres metadades dins del token.</p>
             </div>
           </div>
         </div>
-        
-        <h4 class="mt-4">📝 Exemple d'ús en peticions:</h4>
-        <div class="code-block mt-3">
-          <div class="code-header">
-            <span>Enviar JWT en Header HTTP</span>
-            <button class="copy-btn">Copiar</button>
-          </div>
-          <pre><code class="http">GET /api/protected-resource HTTP/1.1
-Host: api.meudomini.com
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c</code></pre>
-        </div>
-        
+
         <div class="module-card mt-4">
-          <div class="module-title">🔧 Requisits per a JWT segur</div>
-          <p><strong>Pot ser suficient sempre que:</strong></p>
+          <div class="module-title">🔧 Requisits per a un JWT segur</div>
           <ul>
-            <li>El token tingui <strong>expiració</strong> (exp claim)</li>
-            <li>Validem el token al servidor amb <strong>signatura digital</strong></li>
-            <li>Forcem comunicar-se amb <strong>HTTPS</strong></li>
-            <li>Utilitzem algorismes forts com <strong>RS256</strong> o <strong>HS256</strong></li>
-            <li>Incloguem claims necessaris però mínims</li>
+            <li>El token tingui <strong>expiració</strong> (afirmació <code>exp</code>)</li>
+            <li>Validació amb <strong>signatura digital</strong></li>
+            <li>Ús obligatori de <strong>HTTPS</strong></li>
+            <li>Algorismes forts com <strong>RS256</strong> o <strong>HS256</strong></li>
+            <li>Incloure només <strong>afirmacions necessàries i mínimes</strong></li>
           </ul>
         </div>
       </div>
@@ -364,114 +354,47 @@ try {
       </div>
     `
   },
-  {
+ {
     title: "Validació de JWT amb PHP",
     content: `
       <h2 class="slide-title">Validar i Decodificar JWT</h2>
       <div class="text-large">
-        <p>La validació de JWT és crítica per a assegurar que els tokens rebuts són vàlids, no han expirat i no han estat manipulats.</p>
-        
-        <h4 class="mt-4">📝 Exemple complet de validació:</h4>
-        <div class="code-block mt-3">
-          <div class="code-header">
-            <span>validar_jwt.php - Validació de token</span>
-            <button class="copy-btn">Copiar</button>
-          </div>
-          <pre><code class="php">&lt;?php
-require 'vendor/autoload.php';
-use Firebase\\JWT\\JWT;
-use Firebase\\JWT\\Key;
+        <p>La validació de JWT és crítica per assegurar que els tokens rebuts són vàlids, no han expirat i no han estat manipulats.</p>
 
-// Clau secreta (ha de ser la mateixa que en la generació)
-$clau_secreta = 'clau_super_secreta_i_complexa_12345';
-
-// Obtenir token del client (des de header, query param o cookie)
-$headers = apache_request_headers();
-$token = '';
-
-if (isset($headers['Authorization'])) {
-    $auth_header = $headers['Authorization'];
-    if (preg_match('/Bearer\\s(\\S+)/', $auth_header, $matches)) {
-        $token = $matches[1];
-    }
-}
-
-// Si no està al header, provar GET parameter
-if (empty($token) && isset($_GET['token'])) {
-    $token = $_GET['token'];
-}
-
-// Verificar si hi ha token
-if (empty($token)) {
-    http_response_code(401);
-    echo json_encode(['error' => 'Token no proporcionat']);
-    exit;
-}
-
-try {
-    // Decodificar i validar el JWT
-    // $clau_secreta ha de ser la mateixa que la de la generació JWT
-    $decoded = JWT::decode($token, new Key($clau_secreta, 'HS256'));
-    
-    // Token vàlid - Accedir a les dades de l'usuari
-    $usuari_id = $decoded->usuari_id;
-    $nom = $decoded->nom;
-    $rol = $decoded->rol;
-    
-    // Continuar amb la lògica de l'aplicació...
-    echo json_encode([
-        'status' => 'success',
-        'message' => 'Token vàlid',
-        'usuari' => [
-            'id' => $usuari_id,
-            'nom' => $nom,
-            'rol' => $rol
-        ]
-    ]);
-    
-} catch (Exception $e) {
-    // Error en el JWT (expirat, signatura invàlida, etc.)
-    http_response_code(401);
-    echo json_encode([
-        'error' => 'Token invàlid o expirat',
-        'message' => $e->getMessage()
-    ]);
-}
-?&gt;</code></pre>
-        </div>
-        
         <h4 class="mt-4">🚫 Tipus d'errors de validació:</h4>
         <div class="row mt-3">
           <div class="col-md-4">
-            <div class="generic-topic h-100" style="background-color: #f8d7da;">
+            <div class="generic-topic h-100">
               <h4>SignatureInvalidException</h4>
               <p>La signatura no coincideix. Token possiblement manipulat.</p>
             </div>
           </div>
+
           <div class="col-md-4">
-            <div class="generic-topic h-100" style="background-color: #fff3cd;">
+            <div class="generic-topic h-100">
               <h4>ExpiredException</h4>
-              <p>El token ha expirat. Cal sol·licitar un de nou.</p>
+              <p>El token ha expirat. Cal sol·licitar-ne un de nou.</p>
             </div>
           </div>
+
           <div class="col-md-4">
-            <div class="generic-topic h-100" style="background-color: #d1ecf1;">
+            <div class="generic-topic h-100">
               <h4>BeforeValidException</h4>
-              <p>El token encara no és vàlid (nbf claim en el futur).</p>
+              <p>El token encara no és vàlid (afirmació <code>nbf</code> en el futur).</p>
             </div>
           </div>
         </div>
-        
+
         <div class="module-card mt-4">
-          <div class="module-title">🔐 Claims estàndard de JWT</strong></div>
+          <div class="module-title">🔐 Afirmacions estàndard de JWT</div>
           <ul>
-            <strong>iss (issuer):</strong> Emissor del token<br>
-            <strong>sub (subject):</strong> Subjecte del token (normalment usuari ID)<br>
-            <strong>aud (audience):</strong> Destinatari del token<br>
-            <strong>exp (expiration):</strong> Data d'expiració (timestamp)<br>
-            <strong>nbf (not before):</strong> No abans de (timestamp)<br>
-            <strong>iat (issued at):</strong> Emès a (timestamp)<br>
-            <strong>jti (JWT ID):</strong> Identificador únic del token
+            <li><strong>iss (emissor):</strong> Qui emet el token</li>
+            <li><strong>sub (subjecte):</strong> Identitat del subjecte</li>
+            <li><strong>aud (destinatari):</strong> A qui va dirigit el token</li>
+            <li><strong>exp (expiració):</strong> Data d'expiració</li>
+            <li><strong>nbf (no abans de):</strong> Moment a partir del qual és vàlid</li>
+            <li><strong>iat (emès a):</strong> Data de creació</li>
+            <li><strong>jti (ID del JWT):</strong> Identificador únic del token</li>
           </ul>
         </div>
       </div>
@@ -535,7 +458,7 @@ try {
           </table>
         </div>
         
-        <h4 class="mt-4">🎯 Arbre de decisió:</h4>
+        <h4 class="mt-4">🤔 Què triem?</h4>
         <div class="row mt-3">
           <div class="col-md-4">
             <div class="generic-topic h-100" style="border-left: 4px solid #0d6efd;">
@@ -584,7 +507,7 @@ try {
     content: `
       <h2 class="slide-title">Protecció Integral d'APIs</h2>
       <div class="text-large">
-        <p>L'autenticació és només una part de la seguretat d'APIs. Considera aquestes mesures addicionals per a una protecció completa.</p>
+        <p>L'autenticació és només una part de la seguretat d'APIs. Hi ha altres aspectes que també haurem de tenir en compte per màxima protecció.</p>
         
         <div class="row mt-4">
           <div class="col-md-6">
@@ -615,86 +538,6 @@ try {
             </div>
           </div>
         </div>
-        
-        <h4 class="mt-4">📊 Implementació de Rate Limiting:</h4>
-        <div class="code-block mt-3">
-          <div class="code-header">
-            <span>Rate Limiting bàsic en PHP</span>
-            <button class="copy-btn">Copiar</button>
-          </div>
-          <pre><code class="php">&lt;?php
-class RateLimiter {
-    private $redis;
-    private $limit;
-    private $window;
-    
-    public function __construct($limit = 100, $window = 3600) {
-        // 100 peticions per hora per defecte
-        $this->limit = $limit;
-        $this->window = $window;
-        $this->redis = new Redis();
-        $this->redis->connect('127.0.0.1', 6379);
-    }
-    
-    public function checkLimit($apiKey) {
-        $key = 'rate_limit:' . $apiKey;
-        
-        // Obtenir comptador actual
-        $current = $this->redis->get($key) ?: 0;
-        
-        if ($current >= $this->limit) {
-            // Calcular quan es reiniciarà
-            $ttl = $this->redis->ttl($key);
-            if ($ttl < 0) {
-                $ttl = $this->window;
-                $this->redis->setex($key, $this->window, 1);
-            }
-            
-            return [
-                'allowed' => false,
-                'remaining' => 0,
-                'reset_in' => $ttl
-            ];
-        }
-        
-        // Incrementar comptador
-        if ($current == 0) {
-            $this->redis->setex($key, $this->window, 1);
-        } else {
-            $this->redis->incr($key);
-        }
-        
-        return [
-            'allowed' => true,
-            'remaining' => $this->limit - ($current + 1),
-            'reset_in' => $this->redis->ttl($key)
-        ];
-    }
-}
-
-// Ús
-$limiter = new RateLimiter(100, 3600); // 100 req/hora
-$result = $limiter->checkLimit($_SERVER['API_KEY']);
-
-if (!$result['allowed']) {
-    http_response_code(429); // Too Many Requests
-    header('X-RateLimit-Limit: 100');
-    header('X-RateLimit-Remaining: ' . $result['remaining']);
-    header('X-RateLimit-Reset: ' . (time() + $result['reset_in']));
-    echo json_encode(['error' => 'Rate limit exceeded']);
-    exit;
-}
-?&gt;</code></pre>
-        </div>
-        
-        <div class="requadre mt-4">
-          <p><strong>🔐 Gestió d'Errors Segura</strong></p>
-          <p>• <strong>No revelis detalls:</strong> Missatges d'error genèrics que no exposin informació del sistema</p>
-          <p>• <strong>Codi HTTP adequat:</strong> 401 (No autoritzat), 403 (Prohibit), 429 (Massa peticions)</p>
-          <p>• <strong>Logging segur:</strong> Registra errors per a auditoria però no a l'usuari final</p>
-          <p>• <strong>Headers de seguretat:</strong> HSTS, CSP, X-Frame-Options, X-Content-Type-Options</p>
-        </div>
-      </div>
     `
   }
 ];
