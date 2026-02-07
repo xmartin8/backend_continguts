@@ -3,7 +3,7 @@ const cookiesIntroSlides = [
   {
     title: "Cookies & Sessions en PHP",
     content: `
-      <div class="cookies-content">
+
         <div class="cookies-image-container">
           <img src="../img/cookies.png" alt="Cookies i Sessions en PHP" class="cookies-image" />
         </div>
@@ -52,7 +52,6 @@ const cookiesIntroSlides = [
             </div>
           </div>
         </div>
-      </div>
     `,
   }
 ];

@@ -12,8 +12,3 @@
     max-height: 300px;
     object-fit: contain;
 }
-
-html, body {
-    height: 100%;
-    overflow: hidden;
-}

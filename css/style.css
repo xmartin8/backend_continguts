@@ -5,6 +5,13 @@ body {
     overflow-x: hidden;
 }
 
+/* Tallar qualsevol scroll global */
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
 /* Sidebar més estret */
 .sidebar {
     background-color: #ffffff;
@@ -54,19 +61,17 @@ body {
     color: white !important;
 }
 
-
-/* Iframe ocupa tot l'espai disponible */
 .content-frame {
     width: 100%;
-    height: 100vh;
+    height: 100%;        
     border: none;
+    display: block;
 }
 
-/* Estils per al contingut dins de l'iframe */
+/* Contingut base dins l’iframe */
 .mainFrame {
     width: 100%;
-    height: 100vh;
-    background: url('/img/background.png') center center/cover no-repeat;
+    min-height: 100%;    
     position: relative;
 }
 

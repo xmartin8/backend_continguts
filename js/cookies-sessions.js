@@ -1,6 +1,7 @@
 const slides = [
   ...cookiesIntroSlides,
   ...cookiesManagementSlides,
+  ...sessionsManagementSlides,
   ...cookiesSessionsBasicsSlides,
   ...cookiesComparisonSlides,
   ...cookiesConfigSlides,
