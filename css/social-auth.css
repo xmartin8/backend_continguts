@@ -8,49 +8,48 @@
 
 .social-auth-image-container {
     text-align: center;
-    flex: 0 0 38%;
-    max-width: 38%;
+    flex: 0 0 28%;  
+    max-width: 28%; 
 }
 
 .social-auth-image {
     width: 100%;
     height: auto;
-    max-height: 320px;  
+    max-height: 200px;  
     object-fit: contain;
 }
 
 
-/* Responsive */
 @media (max-width: 992px) {
     .social-auth-image-container {
-        flex: 0 0 60%;
-        max-width: 60%;
+        flex: 0 0 50%;  /* abans 60% */
+        max-width: 50%;
     }
 
     .social-auth-image {
-        max-height: 300px;
+        max-height: 180px; /* abans 300px */
     }
 }
 
 @media (max-width: 768px) {
     .social-auth-image-container {
-        max-width: 82%;
+        max-width: 70%; /* abans 82% */
     }
 
     .social-auth-image {
-        max-height: 280px;
+        max-height: 160px; /* abans 280px */
     }
 }
-
 
 @media (max-width: 480px) {
     .social-auth-image-container {
-        max-width: 95%;
+        max-width: 90%; /* abans 95% */
     }    
     .social-auth-image {
-        max-height: 250px;
+        max-height: 140px; /* abans 250px */
     }
 }
+
 
 /* Estils per al diagrama OAuth complet */
 .diagram-container {

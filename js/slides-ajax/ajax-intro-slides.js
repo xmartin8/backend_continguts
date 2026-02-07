@@ -387,22 +387,6 @@ function stopPolling() {
           <li><strong>Optimització:</strong> Limitar freqüència de peticions, implementar cache quan sigui possible.</li>
         </ol>
         
-        <h4 class="mt-4">⚠️ Errors comuns a evitar:</h4>
-        <div class="row mt-3">
-          <div class="col-md-6">
-            <div class="generic-topic h-100" style="background-color: #fff3cd;">
-              <h4>❌ Confiar només en validació client</h4>
-              <p>JavaScript es pot desactivar o manipular. Sempre validar al servidor (PHP).</p>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="generic-topic h-100" style="background-color: #f8d7da;">
-              <h4>❌ Oblidar l'estat de càrrega</h4>
-              <p>Usuaris necessiten saber quan una petició està en curs. Incloure spinners o missatges.</p>
-            </div>
-          </div>
-        </div>
-        
         <div class="module-card mt-4">
           <div class="module-title">🔧 Integració al flux de treball</div>
           <ul>

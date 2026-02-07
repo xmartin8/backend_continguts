@@ -8,7 +8,6 @@ const phpdocintroslides =[
         </div>
 
         <!-- Contingut per sobre de la imatge de fons -->
-        <div class="phpdoc-content">
           <div class="generic-info">
             <h3 class="slide-title">PHPDocumentor - Documentació de Codi</h3>
             <div class="generic-topics">
@@ -53,7 +52,6 @@ const phpdocintroslides =[
               </div>
             </div>
           </div>
-        </div>
 
     `
   }

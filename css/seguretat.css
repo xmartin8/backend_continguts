@@ -92,3 +92,235 @@
         font-style: italic;
         color: #333;
       }
+
+/* ===== NOUS ESTILS PER A L'ESTRUCTURA DE CARPETES ===== */
+
+/* Estils per als acordions de carpetes */
+.accordion-button {
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #e7f1ff;
+  color: #0d6efd;
+  border-color: #86b7fe;
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  border-color: #86b7fe;
+}
+
+.folder-icon {
+  font-size: 1.2rem;
+  margin-right: 10px;
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+}
+
+.accordion-body {
+  background-color: #fff;
+  border-left: 3px solid #dee2e6;
+  border-right: 3px solid #dee2e6;
+  border-bottom: 3px solid #dee2e6;
+}
+
+.folder-details {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.folder-details li {
+  padding: 5px 0;
+  padding-left: 25px;
+  position: relative;
+  border-bottom: 1px dashed #f1f1f1;
+}
+
+.folder-details li:last-child {
+  border-bottom: none;
+}
+
+.folder-details li:before {
+  content: "📄";
+  position: absolute;
+  left: 0;
+  font-size: 0.9em;
+}
+
+.folder-details li code {
+  background-color: #f8f9fa;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.9em;
+  color: #d63384;
+}
+
+/* Estils per al contenidor d'imatge */
+.image-container {
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.image-container:hover {
+  border-color: #0d6efd;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.image-caption {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Guia de pujada */
+.upload-guide .card {
+  border: none;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.upload-section {
+  padding: 15px;
+  border-radius: 8px;
+  height: 100%;
+}
+
+.upload-yes {
+  background-color: rgba(25, 135, 84, 0.05);
+  border-left: 4px solid #198754;
+}
+
+.upload-no {
+  background-color: rgba(220, 53, 69, 0.05);
+  border-left: 4px solid #dc3545;
+}
+
+.upload-section h6 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed #dee2e6;
+}
+
+.upload-section ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.upload-section li {
+  padding: 8px 0;
+  padding-left: 30px;
+  position: relative;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.upload-section li:last-child {
+  border-bottom: none;
+}
+
+.upload-yes li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #198754;
+  font-weight: bold;
+}
+
+.upload-no li:before {
+  content: "✗";
+  position: absolute;
+  left: 0;
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.upload-section li code {
+  background-color: rgba(0,0,0,0.05);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.85em;
+  font-family: 'Consolas', 'Monaco', monospace;
+}
+
+/* Estils responsius */
+@media (max-width: 992px) {
+  .folder-explanation {
+    margin-top: 20px;
+  }
+  
+  .image-container {
+    margin-top: 30px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .upload-guide .row {
+    flex-direction: column;
+  }
+  
+  .upload-section {
+    margin-bottom: 20px;
+  }
+  
+  .accordion-button {
+    font-size: 0.95rem;
+  }
+}
+
+/* Animacions per als acordions */
+.accordion-collapse {
+  transition: all 0.3s ease;
+}
+
+/* Estils per al text destacat */
+.security-text-large {
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.security-text-large .lead {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+/* Estils per a les targetes de informació */
+.info-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.info-card h5 {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Estils per als badges */
+.badge {
+  font-size: 0.75em;
+  padding: 0.35em 0.65em;
+}
+
+/* Estils per als alerts millorats */
+.alert {
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.alert-info {
+  background-color: #e7f3ff;
+  color: #055160;
+  border-left: 4px solid #0dcaf0;
+}

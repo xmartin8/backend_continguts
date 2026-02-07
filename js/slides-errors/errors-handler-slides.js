@@ -76,10 +76,12 @@ restore_error_handler();
       </div>
       
       <div class="important-note mt-4">
-        <h5>⚠️ Importants:</h5>
-        <p>1. El gestor d'errors personalitzat NO pot gestionar errors fatals (E_ERROR, E_PARSE, etc.)</p>
-        <p>2. Si la funció retorna FALSE, l'error es passarà al gestor d'errors per defecte de PHP</p>
-        <p>3. <code>restore_error_handler()</code> torna al gestor d'errors anterior</p>
+        <h5>📝 Notes importants:</h5>
+        <ul class="concept-list">
+        <li> El gestor d'errors personalitzat NO pot gestionar errors fatals (E_ERROR, E_PARSE, etc.)</p>
+        <li> Si la funció retorna FALSE, l'error es passarà al gestor d'errors per defecte de PHP</p>
+        <li> <code>restore_error_handler()</code> torna al gestor d'errors anterior</p>
+        </ul>
       </div>
     `
   },
