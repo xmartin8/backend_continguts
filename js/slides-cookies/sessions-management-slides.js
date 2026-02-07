@@ -49,7 +49,7 @@ const sessionsManagementSlides = [
             <span class="code-language">PHP</span>
             <button class="copy-btn" onclick="copyCode('session-start', this)">Copiar</button>
           </div>
-          <pre><code id="session-start"><?php
+          <pre><code id="session-start">&lt;?php
 session_start();
 
 // Emmagatzemem dades en una sessió
@@ -71,15 +71,15 @@ $_SESSION['preferencies'] = [
             <span class="code-language">PHP</span>
             <button class="copy-btn" onclick="copyCode('session-access', this)">Copiar</button>
           </div>
-          <pre><code id="session-access"><?php
+          <pre><code id="session-access">&lt;?php
 session_start();
 
 // Accedir a les dades de la sessió
 if (isset($_SESSION['usuari'])) {
-    echo "Usuari: " . $_SESSION['usuari'] . "<br>";
-    echo "Correu: " . $_SESSION['email'] . "<br>";
+    echo "Usuari: " . $_SESSION['usuari'] . "&lt;br&gt;";
+    echo "Correu: " . $_SESSION['email'] . "&lt;br&gt;";
     echo "Última connexió: " . 
-         date('d/m/Y H:i', $_SESSION['ultima_connexio']) . "<br>";
+         date('d/m/Y H:i', $_SESSION['ultima_connexio']) . "&lt;br&gt;";
     
     // Accedir a valors d'array
     echo "Idioma preferit: " . $_SESSION['preferencies']['idioma'];
@@ -94,7 +94,7 @@ if (isset($_SESSION['usuari'])) {
             <span class="code-language">PHP</span>
             <button class="copy-btn" onclick="copyCode('session-destroy', this)">Copiar</button>
           </div>
-          <pre><code id="session-destroy"><?php
+          <pre><code id="session-destroy">&lt;?php
 session_start();
 
 // Netejar dades específiques de la sessió
